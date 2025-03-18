@@ -22,25 +22,26 @@ const AboutHero: React.FC = () => {
             />
 
             <p>
-              I've been passionate about technology for as long as I can
+              I&apos;ve been passionate about technology for as long as I can
               remember, but it was in my early teens that I first wrote a{" "}
               <i>Hello World</i>
               —a simple yet defining moment that sparked my deep curiosity about
-              how things work behind the scenes. Since then, I've been on a
+              how things work behind the scenes. Since then, I&apos;ve been on a
               continuous journey of learning, exploring, and building.
               <br />
               <br />
               With over two years of professional experience in software
-              development and more than five years of academic dedication, I've
-              worked with a diverse range of technologies, always striving to
-              refine my skills and embrace new challenges. Problem-solving,
-              clean code, and efficiency are at the core of my approach, and I'm
-              always eager to explore innovative solutions.
+              development and more than five years of academic dedication,
+              I&apos;ve worked with a diverse range of technologies, always
+              striving to refine my skills and embrace new challenges.
+              Problem-solving, clean code, and efficiency are at the core of my
+              approach, and I&apos;m always eager to explore innovative
+              solutions.
               <br />
               <br />
               Beyond coding, I have a strong connection with another
               world—Gastronomy. As a trained and post-graduated professional in
-              the field, I've developed not only a refined palate but also
+              the field, I&apos;ve developed not only a refined palate but also
               invaluable soft skills such as attention to detail, adaptability,
               and teamwork. Whether in the kitchen or in development, I thrive
               on creativity, precision, and continuous improvement.
