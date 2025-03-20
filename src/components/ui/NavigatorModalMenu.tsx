@@ -3,27 +3,7 @@
 import React from "react";
 import { useSearchParams } from "next/navigation";
 import NavigatorModalLink from "./NavigatorModalLink";
-
-const navigationLinks = [
-  { href: "/", label: "Home", icon: "line-md:home-md", kbd: "h" },
-  { href: "/about-me", label: "About Me", icon: "line-md:account", kbd: "a" },
-  { href: "/setup", label: "Setup", icon: "line-md:computer", kbd: "s" },
-];
-
-const socialMediaLinks = [
-  {
-    href: "https://www.linkedin.com/in/amariliodeoliveira/",
-    label: "LinkedIn",
-    icon: "line-md:linkedin",
-    kbd: "l",
-  },
-  {
-    href: "https://github.com/amariliodeoliveira/",
-    label: "GitHub",
-    icon: "line-md:github-loop",
-    kbd: "g",
-  },
-];
+import { navigationLinks, socialMediaLinks } from "@/data/links";
 
 export default function NavigatorModalMenu() {
   const searchParams = useSearchParams();

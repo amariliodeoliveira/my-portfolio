@@ -15,7 +15,9 @@ export default function NavigatorModal() {
       onClose={() => closeModal("navigation_modal")}
     >
       <div className="modal-box p-0 bg-base-300/40 backdrop-blur-3xl overflow-hidden">
-        <NavigatorModalSearch />
+        <Suspense fallback={<p>Loading...</p>}>
+          <NavigatorModalSearch />
+        </Suspense>
 
         <Suspense fallback={<p>Loading...</p>}>
           <NavigatorModalMenu />

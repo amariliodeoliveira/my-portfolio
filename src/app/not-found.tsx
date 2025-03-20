@@ -1,13 +1,13 @@
-"use client";
-
-import React, { Suspense } from "react";
+import React from "react";
 import Link from "next/link";
-import { Icon } from "@iconify/react/dist/iconify.js";
+
 import Footer from "@/components/layout/Footer";
 
-const NotFound: React.FC = () => {
+import { Icon } from "@iconify/react/dist/iconify.js";
+
+export default function NotFound() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <>
       <section className="hero bg-base-200 min-h-screen">
         <div className="hero-content text-center">
           <div className="max-w-xl text-left">
@@ -35,8 +35,6 @@ const NotFound: React.FC = () => {
       </section>
 
       <Footer />
-    </Suspense>
+    </>
   );
-};
-
-export default NotFound;
+}
