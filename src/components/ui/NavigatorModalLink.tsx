@@ -1,24 +1,23 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 
 import { closeModal } from "@/utils/modal";
+
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 interface NavigatorModalLinkProps {
   href: string;
   label: string;
+  icon: string;
   kbd: string;
-  icon?: string;
   modalId: string;
 }
 
 const NavigatorModalLink: React.FC<NavigatorModalLinkProps> = ({
   href,
   label,
-  kbd,
   icon,
+  kbd,
   modalId,
 }) => {
   const handleClick = () => {

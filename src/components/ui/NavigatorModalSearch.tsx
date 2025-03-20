@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 const NavigatorModalSearch: React.FC = () => {
   const searchParams = useSearchParams();
@@ -20,23 +21,10 @@ const NavigatorModalSearch: React.FC = () => {
   }
 
   return (
-    <label className="input input-ghost w-full rounded-none focus-within:bg-base-300/40 focus-within:backdrop-blur-xl focus-within:outline-none">
-      <svg
-        className="h-[1em] opacity-50"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-      >
-        <g
-          strokeLinejoin="round"
-          strokeLinecap="round"
-          strokeWidth="2.5"
-          fill="none"
-          stroke="currentColor"
-        >
-          <circle cx="11" cy="11" r="8"></circle>
-          <path d="m21 21-4.3-4.3"></path>
-        </g>
-      </svg>
+    <label className="input px-4 input-ghost w-full rounded-none focus-within:bg-base-300/40 focus-within:backdrop-blur-xl focus-within:outline-none">
+      <span className="size-5">
+        <Icon className="size-5" icon="line-md:search" />
+      </span>
       <input
         type="search"
         className="grow"
@@ -46,8 +34,8 @@ const NavigatorModalSearch: React.FC = () => {
           handleSearch(e.target.value);
         }}
       />
-      <kbd className="kbd kbd-sm">ctrl</kbd>
-      <kbd className="kbd kbd-sm">k</kbd>
+      <kbd className="kbd">ctrl</kbd>
+      <kbd className="kbd">k</kbd>
     </label>
   );
 };
