@@ -15,15 +15,11 @@ export default function NotFound() {
               <h1 className="mb-6 text-5xl font-bold bg-gradient-to-r from-accent to-error inline-block text-transparent bg-clip-text">
                 Oops! Error 404
               </h1>
-              <Icon
-                icon="line-md:alert-circle-loop"
-                className="size-6 text-error"
-              />
+              <Icon icon="line-md:alert-circle-loop" className="size-6 text-error" />
             </span>
 
             <p className="font-light mb-8">
-              It seems the page you&apos;re looking for doesn&apos;t exist or
-              has been moved.
+              It seems the page you&apos;re looking for doesn&apos;t exist or has been moved.
             </p>
 
             <Link href="/" className="btn justify-between">

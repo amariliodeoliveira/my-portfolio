@@ -1,15 +1,13 @@
 "use client";
 
-import React, { useEffect } from "react";
 import Link from "next/link";
-
-import { navigationLinks } from "@/data/links";
-
 import useModal from "@/hooks/useModal";
 
+import { useEffect } from "react";
+import { navigationLinks } from "@/data/links";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
-const Navbar: React.FC = () => {
+export default function Header() {
   const handleClick = useModal("navigation_modal");
 
   useEffect(() => {
@@ -17,9 +15,7 @@ const Navbar: React.FC = () => {
       if (e.ctrlKey && e.key === "k") {
         e.preventDefault();
 
-        const dialog = document.getElementById(
-          "navigation_modal"
-        ) as HTMLDialogElement | null;
+        const dialog = document.getElementById("navigation_modal") as HTMLDialogElement | null;
 
         if (dialog) {
           dialog.showModal();
@@ -35,7 +31,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   return (
-    <header className="navbar absolute top-0 bg-transparent backdrop-blur-xl uppercase">
+    <header className="navbar absolute top-0 bg-transparent backdrop-blur-xl uppercase pt-4">
       <div className="navbar-start">
         <ul className="menu menu-horizontal">
           <li>
@@ -47,14 +43,11 @@ const Navbar: React.FC = () => {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu gap-4 menu-horizontal">
+        <ul className="menu gap-4 menu-horizontal text-sm">
           {navigationLinks.map((link, index) =>
             link.label.toLowerCase() === "home" ? null : (
               <li key={index}>
-                <Link href={link.href}>
-                  <Icon className="size-4" icon={link.icon} />
-                  {link.label}
-                </Link>
+                <Link href={link.href}>{link.label}</Link>
               </li>
             )
           )}
@@ -72,6 +65,4 @@ const Navbar: React.FC = () => {
       </div>
     </header>
   );
-};
-
-export default Navbar;
+}
