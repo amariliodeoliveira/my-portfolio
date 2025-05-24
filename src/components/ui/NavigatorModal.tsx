@@ -1,5 +1,7 @@
 "use client";
 
+import { Suspense } from "react";
+
 import useModal from "@/hooks/useModal";
 
 import NavigatorModalSearch from "./NavigatorModalSearch";
@@ -11,8 +13,10 @@ export default function NavigatorModal() {
   return (
     <dialog id="navigation_modal" className="modal" onClose={closeModal}>
       <div className="modal-box p-0 bg-base-300/40 backdrop-blur-3xl overflow-hidden">
-        <NavigatorModalSearch />
-        <NavigatorModalMenu />
+        <Suspense fallback={null}>
+          <NavigatorModalSearch />
+          <NavigatorModalMenu />
+        </Suspense>
       </div>
 
       <form method="dialog" className="modal-backdrop">
