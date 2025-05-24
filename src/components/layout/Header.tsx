@@ -8,27 +8,19 @@ import { navigationLinks } from "@/data/links";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function Header() {
-  const handleClick = useModal("navigation_modal");
+  const { openModal } = useModal("navigation_modal");
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.key === "k") {
         e.preventDefault();
-
-        const dialog = document.getElementById("navigation_modal") as HTMLDialogElement | null;
-
-        if (dialog) {
-          dialog.showModal();
-        }
+        openModal();
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [openModal]);
 
   return (
     <header className="navbar absolute top-0 bg-transparent backdrop-blur-xl uppercase pt-4">
@@ -36,7 +28,7 @@ export default function Header() {
         <ul className="menu menu-horizontal">
           <li>
             <Link href="/" className="font-bold">
-              de Oliveira
+              Home
             </Link>
           </li>
         </ul>
@@ -57,7 +49,7 @@ export default function Header() {
       <div className="navbar-end">
         <ul className="menu menu-horizontal">
           <li>
-            <button onClick={handleClick}>
+            <button onClick={openModal}>
               <Icon className="size-5" icon="line-md:align-center" />
             </button>
           </li>

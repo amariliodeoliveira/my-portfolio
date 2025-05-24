@@ -7,23 +7,41 @@ const useModal = (modalId: string) => {
   const router = useRouter();
   const pathname = usePathname();
 
-  const handleClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
-      e.preventDefault();
+  const getModal = useCallback(() => {
+    return document.getElementById(modalId) as HTMLDialogElement | null;
+  }, [modalId]);
 
-      router.replace(pathname);
+  const openModal = useCallback(() => {
+    router.replace(pathname);
+    const modal = getModal();
 
-      const dialog = document.getElementById(
-        modalId
-      ) as HTMLDialogElement | null;
-      if (dialog) {
-        dialog.showModal();
+    if (modal) {
+      modal.showModal();
+
+      setTimeout(() => {
+        const input = modal.querySelector('input[type="search"]') as HTMLInputElement | null;
+        input?.focus();
+      }, 150);
+    }
+  }, [getModal, router, pathname]);
+
+  const closeModal = useCallback(() => {
+    const modal = getModal();
+
+    if (modal) {
+      modal.close();
+
+      if (modalId === "navigation_modal") {
+        const input = document.getElementById("navigator-search-input") as HTMLInputElement | null;
+        if (input) {
+          input.value = "";
+          input.dispatchEvent(new Event("input", { bubbles: true }));
+        }
       }
-    },
-    [modalId, router, pathname]
-  );
+    }
+  }, [getModal, modalId]);
 
-  return handleClick;
+  return { openModal, closeModal };
 };
 
 export default useModal;

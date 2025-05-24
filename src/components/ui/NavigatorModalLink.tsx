@@ -1,7 +1,5 @@
-import React from "react";
 import Link from "next/link";
-
-import { closeModal } from "@/utils/modal";
+import useModal from "@/hooks/useModal";
 
 import { Icon } from "@iconify/react/dist/iconify.js";
 
@@ -13,22 +11,14 @@ interface NavigatorModalLinkProps {
   modalId: string;
 }
 
-const NavigatorModalLink: React.FC<NavigatorModalLinkProps> = ({
-  href,
-  label,
-  icon,
-  kbd,
-  modalId,
-}) => {
-  const handleClick = () => {
-    closeModal(modalId);
-  };
+const NavigatorModalLink: React.FC<NavigatorModalLinkProps> = ({ href, label, icon, kbd, modalId }) => {
+  const { closeModal } = useModal(modalId);
 
   return (
     <Link
       href={href}
       className="btn btn-block justify-between bg-transparent hover:bg-base-300 rounded-none border-0"
-      onClick={handleClick}
+      onClick={closeModal}
     >
       <span className="flex gap-2">
         {icon && <Icon className="size-5" icon={icon} />}
