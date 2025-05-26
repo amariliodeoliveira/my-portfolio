@@ -1,13 +1,17 @@
-import AboutFooter from "@/components/layout/AboutFooter";
+import { Suspense } from "react";
+
 import AboutHero from "@/components/layout/AboutHero";
 import NavigatorModal from "@/components/ui/NavigatorModal";
+import AboutFooter from "@/components/layout/AboutFooter";
 
 export default function Home() {
   return (
     <>
       <main>
         <AboutHero />
-        <NavigatorModal />
+        <Suspense fallback={null}>
+          <NavigatorModal />
+        </Suspense>
       </main>
       <AboutFooter />
     </>

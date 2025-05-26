@@ -1,7 +1,5 @@
 "use client";
 
-import { Suspense } from "react";
-
 import useModal from "@/hooks/useModal";
 
 import NavigatorModalSearch from "./NavigatorModalSearch";
@@ -23,17 +21,15 @@ export default function NavigatorModal() {
     if (input) input.value = "";
     params.delete("query");
     replace(`${pathname}?${params.toString()}`);
-    
+
     closeModal();
   };
 
   return (
     <dialog id="navigation_modal" className="modal" onClose={handleClose}>
       <div className="modal-box p-0 bg-base-300/40 backdrop-blur-3xl overflow-hidden">
-        <Suspense fallback={null}>
-          <NavigatorModalSearch />
-          <NavigatorModalMenu />
-        </Suspense>
+        <NavigatorModalSearch />
+        <NavigatorModalMenu />
       </div>
 
       <form method="dialog" className="modal-backdrop">
