@@ -12,7 +12,31 @@ const workSans = Work_Sans({
 
 export const metadata: Metadata = {
   title: "Amarilio de Oliveira",
-  description: "Welcome to my portfolio! Feel free to explore my work and get in touch.",
+  description: "Software Developer | Next.js | React | Typescript",
+  keywords: ["Software", "Developer", "Next.js", "React", "JavaScript", "Typescript", "Node.js", "Tailwind CSS"],
+  openGraph: {
+    title: "Amarilio de Oliveira",
+    description: "Software Developer | Next.js | React | Typescript",
+    url: "https://www.amarilio.tech/",
+    siteName: "Amarilio de Oliveira",
+    images: [
+      {
+        url: "/img/profile-oficial.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Amarilio de Oliveira - Software Developer",
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Amarilio de Oliveira",
+    description: "Software Developer | Next.js | React | Typescript",
+    images: ["/img/profile-oficial.jpeg"],
+    creator: "@AmarilioAlencar",
+  },
 };
 
 export default function RootLayout({
