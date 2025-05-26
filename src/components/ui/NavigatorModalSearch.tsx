@@ -1,7 +1,7 @@
 "use client";
 
-import React from "react";
 import { useSearchParams, usePathname, useRouter } from "next/navigation";
+
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 const NavigatorModalSearch: React.FC = () => {
@@ -27,6 +27,8 @@ const NavigatorModalSearch: React.FC = () => {
       </span>
       <input
         type="search"
+        id="navigation_search"
+        autoComplete="off"
         className="grow"
         placeholder="Search"
         defaultValue={searchParams.get("query")?.toString()}

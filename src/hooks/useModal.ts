@@ -30,16 +30,8 @@ const useModal = (modalId: string) => {
 
     if (modal) {
       modal.close();
-
-      if (modalId === "navigation_modal") {
-        const input = document.getElementById("navigator-search-input") as HTMLInputElement | null;
-        if (input) {
-          input.value = "";
-          input.dispatchEvent(new Event("input", { bubbles: true }));
-        }
-      }
     }
-  }, [getModal, modalId]);
+  }, [getModal]);
 
   return { openModal, closeModal };
 };

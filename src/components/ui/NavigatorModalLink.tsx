@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
 import useModal from "@/hooks/useModal";
 
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -11,14 +13,15 @@ interface NavigatorModalLinkProps {
   modalId: string;
 }
 
-const NavigatorModalLink: React.FC<NavigatorModalLinkProps> = ({ href, label, icon, kbd, modalId }) => {
+export default function NavigatorModalLink({ href, label, icon, kbd, modalId }: NavigatorModalLinkProps) {
+  const pathname = usePathname();
   const { closeModal } = useModal(modalId);
 
   return (
     <Link
       href={href}
       className="btn btn-block justify-between bg-transparent hover:bg-base-300 rounded-none border-0"
-      onClick={closeModal}
+      onClick={() => pathname === href && closeModal()}
     >
       <span className="flex gap-2">
         {icon && <Icon className="size-5" icon={icon} />}
@@ -27,6 +30,4 @@ const NavigatorModalLink: React.FC<NavigatorModalLinkProps> = ({ href, label, ic
       <kbd className="kbd">{kbd}</kbd>
     </Link>
   );
-};
-
-export default NavigatorModalLink;
+}
