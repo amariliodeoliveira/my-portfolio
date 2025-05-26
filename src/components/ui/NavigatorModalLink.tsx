@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 import useModal from "@/hooks/useModal";
 
@@ -14,14 +13,13 @@ interface NavigatorModalLinkProps {
 }
 
 export default function NavigatorModalLink({ href, label, icon, kbd, modalId }: NavigatorModalLinkProps) {
-  const pathname = usePathname();
   const { closeModal } = useModal(modalId);
 
   return (
     <Link
       href={href}
       className="btn btn-block justify-between bg-transparent hover:bg-base-300 rounded-none border-0"
-      onClick={() => pathname === href && closeModal()}
+      onClick={() => closeModal()}
     >
       <span className="flex gap-2">
         {icon && <Icon className="size-5" icon={icon} />}

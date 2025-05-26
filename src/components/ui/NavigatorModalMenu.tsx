@@ -1,14 +1,13 @@
 "use client";
 
-import React from "react";
-import { useSearchParams } from "next/navigation";
 import NavigatorModalLink from "./NavigatorModalLink";
 import { navigationLinks, socialMediaLinks } from "@/data/links";
 
-export default function NavigatorModalMenu() {
-  const searchParams = useSearchParams();
-  const query = searchParams.get("query") || "";
+type NavigatorModalMenuProps = {
+  query: string;
+};
 
+export default function NavigatorModalMenu({ query }: NavigatorModalMenuProps) {
   const filteredNavigationLinks = navigationLinks.filter((link) =>
     link.label.toLowerCase().includes(query.toLowerCase())
   );
@@ -19,17 +18,13 @@ export default function NavigatorModalMenu() {
 
   return (
     <>
-      {query &&
-      filteredNavigationLinks.length === 0 &&
-      filteredSocialMediaLinks.length === 0 ? (
+      {query && filteredNavigationLinks.length === 0 && filteredSocialMediaLinks.length === 0 ? (
         <p className="p-4 text-sm opacity-60">No results found.</p>
       ) : (
         <>
           {filteredNavigationLinks.length > 0 && (
             <>
-              <h3 className="uppercase p-4 pb-2 text-xs opacity-60 tracking-wide">
-                Navigate to
-              </h3>
+              <h3 className="uppercase p-4 pb-2 text-xs opacity-60 tracking-wide">Navigate to</h3>
               <ul className="list *:list-item">
                 {filteredNavigationLinks.map((link, index) => (
                   <li key={index}>
@@ -48,9 +43,7 @@ export default function NavigatorModalMenu() {
 
           {filteredSocialMediaLinks.length > 0 && (
             <>
-              <h3 className="uppercase p-4 pb-2 text-xs opacity-60 tracking-wide">
-                Social medias
-              </h3>
+              <h3 className="uppercase p-4 pb-2 text-xs opacity-60 tracking-wide">Social medias</h3>
               <ul className="list *:list-item">
                 {filteredSocialMediaLinks.map((link, index) => (
                   <li key={index}>
