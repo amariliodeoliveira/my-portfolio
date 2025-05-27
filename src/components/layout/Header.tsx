@@ -27,8 +27,11 @@ export default function Header() {
       <div className="navbar-start">
         <ul className="menu menu-horizontal">
           <li>
-            <Link href="/" className="font-bold">
-              Home
+            <Link
+              href="/"
+              className="font-black normal-case text-3xl bg-gradient-to-r from-accent via-primary to-secondary inline-block text-transparent bg-clip-text hover:scale-105 active:scale-95 transition-transform duration-200"
+            >
+              AdO
             </Link>
           </li>
         </ul>

@@ -8,7 +8,7 @@ export interface Link {
 export const navigationLinks: Link[] = [
   { href: "/", label: "Home", icon: "line-md:home-md", kbd: "h" },
   { href: "/about-me", label: "About Me", icon: "line-md:account", kbd: "a" },
-  { href: "/setup", label: "Setup", icon: "line-md:computer", kbd: "s" },
+  /* { href: "/setup", label: "Setup", icon: "line-md:computer", kbd: "s" }, */
 ];
 
 export const socialMediaLinks: Link[] = [

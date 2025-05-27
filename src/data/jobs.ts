@@ -3,7 +3,7 @@ export const MyJobs = [
     startDate: "2024-01-01",
     endDate: null,
     company: "PORING.me",
-    link: new URL("https://poring.me"),
+    link: undefined /* new URL("https://poring.me") */,
     role: "Founder & Software Engineer",
     description:
       "Developed a fan-made Ragnarok Online platform, offering tools to enhance player experience. Researched user needs for a user-friendly UI, built a monolithic full-stack app with strong API integration, and automated deployments via CI/CD pipelines. Deployed on Vercel for scalability and performance.",
@@ -12,7 +12,7 @@ export const MyJobs = [
     startDate: "2023-03-01",
     endDate: "2025-03-31",
     company: "StonePlus - Concrete Design",
-    link: new URL("https://stoneplus.com.br"),
+    link: undefined /* new URL("https://stoneplus.com.br") */,
     role: "Fullstack Developer",
     description:
       "Developed web apps with React, Node.js, and TypeScript, crafting responsive interfaces and APIs. Managed databases with PostgreSQL, boosted performance with Next.js, and secured sessions via JWT. Delivered clean, scalable solutions.",
