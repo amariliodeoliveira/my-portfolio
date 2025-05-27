@@ -30,7 +30,7 @@ export default function NavigatorModalLinkCopyUrl({ query, label }: NavigatorMod
         <Icon className="size-5" icon="line-md:link" />
         {label}
       </span>
-      <kbd className="kbd">L</kbd>
+      <kbd className="kbd">c</kbd>
     </button>
   );
 }
