@@ -23,7 +23,7 @@ export default function Header() {
   }, [openModal]);
 
   return (
-    <header className="navbar absolute top-0 bg-transparent backdrop-blur-xl uppercase pt-4">
+    <header className="navbar absolute top-0 bg-transparent backdrop-blur-xl uppercase">
       <div className="navbar-start">
         <ul className="menu menu-horizontal">
           <li>
