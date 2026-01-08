@@ -19,7 +19,8 @@
     "start": "next start",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "prepare": "husky"
   },
   "dependencies": {
