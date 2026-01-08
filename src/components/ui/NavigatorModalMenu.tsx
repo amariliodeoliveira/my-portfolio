@@ -11,17 +11,20 @@ type NavigatorModalMenuProps = {
 
 export default function NavigatorModalMenu({ query }: NavigatorModalMenuProps) {
   const filteredNavigationLinks = navigationLinks.filter((link) =>
-    link.label.toLowerCase().includes(query.toLowerCase())
+    link.label.toLowerCase().includes(query.toLowerCase()),
   );
 
   const filteredSocialMediaLinks = socialMediaLinks.filter((link) =>
-    link.label.toLowerCase().includes(query.toLowerCase())
+    link.label.toLowerCase().includes(query.toLowerCase()),
   );
 
   const showCopyUrl = "Copy URL".toLowerCase().includes(query.toLowerCase());
 
   const noResults =
-    query && filteredNavigationLinks.length === 0 && filteredSocialMediaLinks.length === 0 && !showCopyUrl;
+    query &&
+    filteredNavigationLinks.length === 0 &&
+    filteredSocialMediaLinks.length === 0 &&
+    !showCopyUrl;
 
   return (
     <>
@@ -31,7 +34,9 @@ export default function NavigatorModalMenu({ query }: NavigatorModalMenuProps) {
         <>
           {(showCopyUrl || !query) && (
             <>
-              <h3 className="uppercase p-4 pb-2 text-xs opacity-60 tracking-wide">General</h3>
+              <h3 className="p-4 pb-2 text-xs tracking-wide uppercase opacity-60">
+                General
+              </h3>
               <ul className="list *:list-item">
                 <li>
                   <NavigatorModalLinkCopyUrl query={query} label="Copy URL" />
@@ -42,7 +47,9 @@ export default function NavigatorModalMenu({ query }: NavigatorModalMenuProps) {
 
           {filteredNavigationLinks.length > 0 && (
             <>
-              <h3 className="uppercase p-4 pb-2 text-xs opacity-60 tracking-wide">Navigate to</h3>
+              <h3 className="p-4 pb-2 text-xs tracking-wide uppercase opacity-60">
+                Navigate to
+              </h3>
               <ul className="list *:list-item">
                 {filteredNavigationLinks.map((link, index) => (
                   <li key={index}>
@@ -61,7 +68,9 @@ export default function NavigatorModalMenu({ query }: NavigatorModalMenuProps) {
 
           {filteredSocialMediaLinks.length > 0 && (
             <>
-              <h3 className="uppercase p-4 pb-2 text-xs opacity-60 tracking-wide">Social medias</h3>
+              <h3 className="p-4 pb-2 text-xs tracking-wide uppercase opacity-60">
+                Social medias
+              </h3>
               <ul className="list *:list-item">
                 {filteredSocialMediaLinks.map((link, index) => (
                   <li key={index}>

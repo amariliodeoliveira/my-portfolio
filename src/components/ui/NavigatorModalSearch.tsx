@@ -7,9 +7,12 @@ type NavigatorModalSearchProps = {
   setQuery: (value: string) => void;
 };
 
-export default function NavigatorModalSearch({ query, setQuery }: NavigatorModalSearchProps) {
+export default function NavigatorModalSearch({
+  query,
+  setQuery,
+}: NavigatorModalSearchProps) {
   return (
-    <label className="input px-4 input-ghost w-full rounded-none focus-within:bg-base-300/40 focus-within:backdrop-blur-xl focus-within:outline-none">
+    <label className="input input-ghost focus-within:bg-base-300/40 w-full rounded-none px-4 focus-within:backdrop-blur-xl focus-within:outline-none">
       <span className="size-5">
         <Icon className="size-5" icon="line-md:search" />
       </span>

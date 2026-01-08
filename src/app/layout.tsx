@@ -11,13 +11,28 @@ const workSans = Work_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://amarilio.tech/"),
   title: "Amarilio de Oliveira",
   description: "Software Developer | Next.js | React | Typescript",
-  keywords: ["Software", "Developer", "Next.js", "React", "JavaScript", "Typescript", "Node.js", "Tailwind CSS"],
+  authors: [{ name: "Amarilio de Oliveira" }],
+  keywords: [
+    "Software",
+    "Developer",
+    "Next.js",
+    "React",
+    "JavaScript",
+    "Typescript",
+    "Node.js",
+    "Tailwind CSS",
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Amarilio de Oliveira",
     description: "Software Developer | Next.js | React | Typescript",
-    url: "https://www.amarilio.tech/",
+    url: "https://amarilio.tech/",
     siteName: "Amarilio de Oliveira",
     images: [
       {

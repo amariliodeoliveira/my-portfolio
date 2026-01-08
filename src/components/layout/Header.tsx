@@ -23,13 +23,13 @@ export default function Header() {
   }, [openModal]);
 
   return (
-    <header className="navbar absolute top-0 bg-transparent backdrop-blur-xl uppercase">
+    <header className="navbar absolute top-0 bg-transparent uppercase backdrop-blur-xl">
       <div className="navbar-start">
         <ul className="menu menu-horizontal">
           <li>
             <Link
               href="/"
-              className="font-black normal-case text-3xl bg-gradient-to-r from-accent via-primary to-secondary inline-block text-transparent bg-clip-text hover:scale-105 active:scale-95 transition-transform duration-200"
+              className="from-accent via-primary to-secondary inline-block bg-linear-to-r bg-clip-text text-3xl font-black text-transparent normal-case transition-transform duration-200 hover:scale-105 active:scale-95"
             >
               AdO
             </Link>
@@ -38,13 +38,35 @@ export default function Header() {
       </div>
 
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu gap-4 menu-horizontal text-sm">
+        <ul className="menu menu-horizontal gap-4 text-sm">
           {navigationLinks.map((link, index) =>
-            link.label.toLowerCase() === "home" ? null : (
+            link.label.toLowerCase() === "home" ? null : link.sublinks ? (
+              <li key={index}>
+                <details>
+                  <summary>{link.label}</summary>
+                  <ul className="w-fit">
+                    {link.sublinks.map((sublink, subIndex) => (
+                      <li key={subIndex}>
+                        <Link
+                          className="text-nowrap"
+                          href={sublink.href}
+                          onClick={(e) => {
+                            const details = e.currentTarget.closest("details");
+                            if (details) details.removeAttribute("open");
+                          }}
+                        >
+                          {sublink.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ) : (
               <li key={index}>
                 <Link href={link.href}>{link.label}</Link>
               </li>
-            )
+            ),
           )}
         </ul>
       </div>

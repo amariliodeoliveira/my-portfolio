@@ -14,7 +14,9 @@ const useModal = (modalId: string) => {
       modal.showModal();
 
       setTimeout(() => {
-        const input = modal.querySelector('input[type="search"]') as HTMLInputElement | null;
+        const input = modal.querySelector(
+          'input[type="search"]',
+        ) as HTMLInputElement | null;
         input?.focus();
       }, 150);
     }

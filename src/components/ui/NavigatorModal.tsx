@@ -21,7 +21,7 @@ export default function NavigatorModal() {
 
   return (
     <dialog id="navigation_modal" className="modal" onClose={handleClose}>
-      <div className="modal-box p-0 bg-base-300/40 backdrop-blur-3xl overflow-hidden">
+      <div className="modal-box bg-base-300/40 overflow-hidden p-0 backdrop-blur-3xl">
         <NavigatorModalSearch query={query} setQuery={setQuery} />
         <NavigatorModalMenu query={query} />
       </div>

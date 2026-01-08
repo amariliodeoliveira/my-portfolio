@@ -8,7 +8,10 @@ type NavigatorModalLinkCopyUrlProps = {
   label: string;
 };
 
-export default function NavigatorModalLinkCopyUrl({ query, label }: NavigatorModalLinkCopyUrlProps) {
+export default function NavigatorModalLinkCopyUrl({
+  query,
+  label,
+}: NavigatorModalLinkCopyUrlProps) {
   const { closeModal } = useModal("navigation_modal");
 
   if (!label.toLowerCase().includes(query.toLowerCase())) {
@@ -23,7 +26,7 @@ export default function NavigatorModalLinkCopyUrl({ query, label }: NavigatorMod
 
   return (
     <button
-      className="btn btn-block justify-between bg-transparent hover:bg-base-300 rounded-none border-0"
+      className="btn btn-block hover:bg-base-300 justify-between rounded-none border-0 bg-transparent"
       onClick={handleClick}
     >
       <span className="flex gap-2">

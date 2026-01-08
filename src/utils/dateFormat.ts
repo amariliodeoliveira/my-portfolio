@@ -17,9 +17,11 @@ const months = [
 
 export function formatDate(dateString: string | null): string {
   if (dateString === null) return "Moment";
-  
+
   if (typeof dateString !== "string") {
-    throw new Error(`Invalid date format: expected string or null, received ${typeof dateString}`);
+    throw new Error(
+      `Invalid date format: expected string or null, received ${typeof dateString}`,
+    );
   }
 
   const date = new Date(dateString);

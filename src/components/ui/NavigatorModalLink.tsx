@@ -12,13 +12,19 @@ interface NavigatorModalLinkProps {
   modalId: string;
 }
 
-export default function NavigatorModalLink({ href, label, icon, kbd, modalId }: NavigatorModalLinkProps) {
+export default function NavigatorModalLink({
+  href,
+  label,
+  icon,
+  kbd,
+  modalId,
+}: NavigatorModalLinkProps) {
   const { closeModal } = useModal(modalId);
 
   return (
     <Link
       href={href}
-      className="btn btn-block justify-between bg-transparent hover:bg-base-300 rounded-none border-0"
+      className="btn btn-block hover:bg-base-300 justify-between rounded-none border-0 bg-transparent"
       onClick={() => closeModal()}
     >
       <span className="flex gap-2">

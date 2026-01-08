@@ -8,14 +8,18 @@ export default function NotFoundHero() {
       <div className="hero-content text-center">
         <div className="max-w-xl text-left">
           <span className="flex gap-2">
-            <h1 className="mb-6 text-5xl font-bold bg-gradient-to-r from-accent to-error inline-block text-transparent bg-clip-text">
+            <h1 className="from-accent to-error mb-6 inline-block bg-linear-to-r bg-clip-text text-5xl font-bold text-transparent">
               Oops! Error 404
             </h1>
-            <Icon icon="line-md:alert-circle-loop" className="size-6 text-error" />
+            <Icon
+              icon="line-md:alert-circle-loop"
+              className="text-error size-6"
+            />
           </span>
 
-          <p className="font-light mb-8">
-            It seems the page you&apos;re looking for doesn&apos;t exist or has been moved.
+          <p className="mb-8 font-light">
+            It seems the page you&apos;re looking for doesn&apos;t exist or has
+            been moved.
           </p>
 
           <Link href="/" className="btn justify-between">

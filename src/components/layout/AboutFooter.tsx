@@ -1,9 +1,10 @@
-import { Icon } from "@iconify/react";
 import Link from "next/link";
+
+import { Icon } from "@iconify/react";
 
 export default function AboutFooter() {
   return (
-    <footer className="footer footer-center bg-base-300/40 backdrop-blur-xl text-base-content p-4">
+    <footer className="footer footer-center bg-base-300/40 text-base-content p-4 backdrop-blur-xl">
       <nav className="grid grid-flow-col gap-4">
         <ul className="flex gap-4">
           <li>

@@ -3,12 +3,26 @@ export interface Link {
   label: string;
   icon: string;
   kbd: string;
+  sublinks?: Link[];
 }
 
 export const navigationLinks: Link[] = [
   { href: "/", label: "Home", icon: "line-md:home-md", kbd: "h" },
   { href: "/about-me", label: "About Me", icon: "line-md:account", kbd: "a" },
-  /* { href: "/setup", label: "Setup", icon: "line-md:computer", kbd: "s" }, */
+  {
+    href: "/portfolio",
+    label: "Portfolio",
+    icon: "line-md:computer",
+    kbd: "s",
+    sublinks: [
+      {
+        href: "/pixi-fireworks",
+        label: "PixiJS - Fireworks Presentation",
+        icon: "line-md:computer",
+        kbd: "s",
+      },
+    ],
+  },
 ];
 
 export const socialMediaLinks: Link[] = [

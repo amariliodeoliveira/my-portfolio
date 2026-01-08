@@ -1,11 +1,12 @@
-import { Icon } from "@iconify/react";
 import Link from "next/link";
+
+import { Icon } from "@iconify/react";
 
 import { socialMediaLinks } from "@/data/links";
 
 export default function Footer() {
   return (
-    <footer className="footer fixed bottom-0 left-0 footer-center bg-transparent text-base-content p-4 backdrop-blur">
+    <footer className="footer footer-center text-base-content fixed bottom-0 left-0 bg-transparent p-4 backdrop-blur">
       <nav className="grid grid-flow-col gap-4">
         <ul className="flex gap-4">
           {socialMediaLinks.map((link, index) => (
