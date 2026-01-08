@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Amarilio de Oliveira",
-    description: "Software Developer | Next.js | React | Typescript",
+    description: "Fullstack Software Engineer | React · Next.js · Nest.js",
     url: "https://amarilio.tech/",
     siteName: "Amarilio de Oliveira",
     images: [
