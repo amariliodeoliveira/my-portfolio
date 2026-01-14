@@ -1,0 +1,53 @@
+version: 2
+
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "20:00"
+      timezone: "America/Sao_Paulo"
+
+    open-pull-requests-limit: 2
+
+    labels:
+      - "dependencies"
+
+    commit-message:
+      prefix: "chore(deps)"
+
+    groups:
+      production-dependencies:
+        dependency-type: "production"
+
+      development-dependencies:
+        dependency-type: "development"
+
+    ignore:
+      # Core framework & UI — majors can break behavior/layout
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major"]
+
+      - dependency-name: "react-dom"
+        update-types: ["version-update:semver-major"]
+
+      - dependency-name: "next"
+        update-types: ["version-update:semver-major"]
+
+      - dependency-name: "tailwindcss"
+        update-types: ["version-update:semver-major"]
+
+      - dependency-name: "daisyui"
+        update-types: ["version-update:semver-major"]
+
+      # Type definitions — must align with runtime / framework majors
+      - dependency-name: "@types/react"
+        update-types: ["version-update:semver-major"]
+
+      - dependency-name: "@types/react-dom"
+        update-types: ["version-update:semver-major"]
+
+      - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
