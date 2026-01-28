@@ -2,6 +2,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import Header from "@/components/layout/Header";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className={`${workSans.variable} antialiased`}>
         <Header />
         {children}
+        <Analytics />
       </body>
     </html>
   );
