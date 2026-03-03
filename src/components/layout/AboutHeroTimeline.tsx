@@ -29,10 +29,10 @@ export default function AboutHeroTimeline() {
 
           return (
             <li key={index}>
-              {index !== 0 && <hr />}
+              {index !== 0 && <hr className="bg-secondary" />}
               <Icon
                 icon="line-md:confirm-circle-filled"
-                className="timeline-middle size-5"
+                className="timeline-middle text-secondary size-5"
               />
               <div
                 className={`${index % 2 === 0 ? "timeline-start mb-10 md:text-end" : "timeline-end md:mb-10"}`}
@@ -48,7 +48,7 @@ export default function AboutHeroTimeline() {
                 </div>
                 <p className="font-extralight">{job.description}</p>
               </div>
-              {index < sortedJobs.length - 1 && <hr />}
+              {index < sortedJobs.length - 1 && <hr className="bg-secondary" />}
             </li>
           );
         })}

@@ -1,5 +1,5 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: synthwave --default;
+  themes: forest --default;
   exclude: rootscrollgutter;
 }
