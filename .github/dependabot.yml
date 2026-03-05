@@ -3,6 +3,7 @@ version: 2
 updates:
   - package-ecosystem: "npm"
     directory: "/"
+    target-branch: "develop"
 
     schedule:
       interval: "weekly"
@@ -11,8 +12,6 @@ updates:
       timezone: "America/Sao_Paulo"
 
     open-pull-requests-limit: 2
-
-    target-branch: "develop"
 
     labels:
       - "dependencies"
@@ -72,6 +71,8 @@ updates:
 
   - package-ecosystem: "github-actions"
     directory: "/"
+    target-branch: "develop"
+
     schedule:
       interval: "weekly"
       day: "sunday"
