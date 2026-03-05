@@ -28,7 +28,23 @@ updates:
         dependency-type: "development"
 
     ignore:
-      # Core framework & UI — majors can break behavior/layout
+      # --- ESLint & Tooling (Travando na v9 para evitar quebras de CI) ---
+      - dependency-name: "eslint"
+        versions: [">= 10.0.0"]
+
+      - dependency-name: "@eslint/js"
+        versions: [">= 10.0.0"]
+
+      - dependency-name: "@eslint/eslintrc"
+        versions: [">= 4.0.0"]
+
+      - dependency-name: "typescript-eslint"
+        update-types: ["version-update:semver-major"]
+
+      - dependency-name: "eslint-config-next"
+        update-types: ["version-update:semver-major"]
+
+      # --- Core framework & UI — majors can break behavior/layout ---
       - dependency-name: "react"
         update-types: ["version-update:semver-major"]
 
@@ -44,7 +60,7 @@ updates:
       - dependency-name: "daisyui"
         update-types: ["version-update:semver-major"]
 
-      # Type definitions — must align with runtime / framework majors
+      # --- Type definitions — must align with runtime / framework majors ---
       - dependency-name: "@types/react"
         update-types: ["version-update:semver-major"]
 
@@ -52,4 +68,16 @@ updates:
         update-types: ["version-update:semver-major"]
 
       - dependency-name: "@types/node"
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "sunday"
+      time: "20:00"
+      timezone: "America/Sao_Paulo"
+
+    ignore:
+      - dependency-name: "node"
         update-types: ["version-update:semver-major"]
