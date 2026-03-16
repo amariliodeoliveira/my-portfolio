@@ -4,7 +4,7 @@ import Link from "next/link";
 import useModal from "@/hooks/useModal";
 
 import { useEffect } from "react";
-import { navigationLinks } from "@/data/links";
+import { navigationLinks } from "@/config/navigation";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function Header() {
@@ -39,35 +39,29 @@ export default function Header() {
 
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal gap-4 text-sm">
-          {navigationLinks.map((link, index) =>
-            link.label.toLowerCase() === "home" ? null : link.sublinks ? (
-              <li key={index}>
-                <details>
-                  <summary>{link.label}</summary>
-                  <ul className="w-fit">
-                    {link.sublinks.map((sublink, subIndex) => (
-                      <li key={subIndex}>
-                        <Link
-                          className="text-nowrap"
-                          href={sublink.href}
-                          onClick={(e) => {
-                            const details = e.currentTarget.closest("details");
-                            if (details) details.removeAttribute("open");
-                          }}
-                        >
-                          {sublink.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </details>
+          {navigationLinks.map((link) => {
+            if (link.showInNavbar === false) return null;
+
+            return (
+              <li key={link.href}>
+                {link.sublinks ? (
+                  <details>
+                    <summary>{link.label}</summary>
+
+                    <ul className="w-fit">
+                      {link.sublinks.map((sublink) => (
+                        <li key={sublink.href}>
+                          <Link href={sublink.href}>{sublink.label}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                ) : (
+                  <Link href={link.href}>{link.label}</Link>
+                )}
               </li>
-            ) : (
-              <li key={index}>
-                <Link href={link.href}>{link.label}</Link>
-              </li>
-            ),
-          )}
+            );
+          })}
         </ul>
       </div>
 

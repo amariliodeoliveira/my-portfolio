@@ -15,17 +15,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint": "eslint .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "postbuild": "node -e \"import('aeo.js/next').then(m => m.postBuild({ title: 'My Site', url: 'process.env.NEXT_PUBLIC_SITE_URL' }))\""
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.6",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
+    "aeo.js": "^0.0.8",
     "next": "^16.1.6",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"

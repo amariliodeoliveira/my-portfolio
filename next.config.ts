@@ -1,7 +1,21 @@
-import type { NextConfig } from "next";
+import { withAeo } from "aeo.js/next";
+import { env } from "./src/env";
 
-const nextConfig: NextConfig = {
+export default withAeo({
   /* config options here */
-};
 
-export default nextConfig;
+  aeo: {
+    title: env.siteTitle,
+    url: env.siteUrl,
+    description: env.siteDescription,
+    generators: {
+      robotsTxt: true,
+      llmsTxt: true,
+      schema: true,
+    },
+    widget: {
+      enabled: true,
+      position: "bottom-right",
+    },
+  },
+});
