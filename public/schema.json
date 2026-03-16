@@ -1,0 +1,27 @@
+{
+  "site": [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "My Site",
+      "url": "process.env.NEXT_PUBLIC_SITE_URL"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "My Site",
+      "url": "process.env.NEXT_PUBLIC_SITE_URL"
+    }
+  ],
+  "pages": {
+    "/": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Amarilio de Oliveira",
+        "url": "process.env.NEXT_PUBLIC_SITE_URL",
+        "description": "Software Developer | Next.js | React | Typescript"
+      }
+    ]
+  }
+}
