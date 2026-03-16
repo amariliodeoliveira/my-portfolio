@@ -1,32 +1,20 @@
 import "./globals.css";
 
-import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import type { Metadata } from "next";
+
 import Header from "@/components/layout/Header";
+import { baseMetadata } from "@/lib/metadata";
+
+export const metadata: Metadata = baseMetadata;
 
 const workSans = Work_Sans({
   variable: "--font-work-sans",
   subsets: ["latin"],
 });
-
-export const metadata: Metadata = {
-  title: "Amarilio de Oliveira",
-  description: "Software Developer | Next.js | React | Typescript",
-  authors: [{ name: "Amarilio de Oliveira" }],
-  keywords: [
-    "Software",
-    "Developer",
-    "Next.js",
-    "React",
-    "JavaScript",
-    "Typescript",
-    "Node.js",
-    "Tailwind CSS",
-  ],
-};
 
 export default function RootLayout({
   children,
@@ -38,6 +26,7 @@ export default function RootLayout({
       <body className={`${workSans.variable} antialiased`}>
         <Header />
         {children}
+
         <Analytics />
         <SpeedInsights />
       </body>

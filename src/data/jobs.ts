@@ -1,4 +1,6 @@
-export const MyJobs = [
+import type { Job } from "@/types";
+
+export const MyJobs: readonly Job[] = [
   {
     startDate: "2025-06-02",
     endDate: null,
