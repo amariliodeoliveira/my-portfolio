@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { MyProfile } from "@/data";
 import useModal from "@/hooks/useModal";
 
 import { useEffect } from "react";
@@ -31,7 +32,7 @@ export default function Header() {
               href="/"
               className="from-accent via-primary to-secondary inline-block bg-linear-to-r bg-clip-text text-3xl font-black text-transparent normal-case transition-transform duration-200 hover:scale-105 active:scale-95"
             >
-              AdO
+              {MyProfile.brandName}
             </Link>
           </li>
         </ul>
