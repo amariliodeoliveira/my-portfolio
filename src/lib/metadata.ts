@@ -33,5 +33,9 @@ export const baseMetadata: Metadata = {
 
   keywords: [...MyProfile.seo.keywords],
 
+  alternates: {
+    canonical: MyProfile.contact.url,
+  },
+
   openGraph: createOpenGraph(),
 };
