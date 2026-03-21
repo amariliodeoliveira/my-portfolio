@@ -28,4 +28,4 @@ export const MyJobs: readonly Job[] = [
     description:
       "Developed a responsive, multilingual web application (Portuguese, English, and French) in WordPress for an architecture consultancy in Toronto, Canada, while ensuring the website met client needs and provided a seamless user experience across multiple languages and devices.",
   },
-];
+] as const;

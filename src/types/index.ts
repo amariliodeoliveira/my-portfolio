@@ -1,8 +1,2 @@
-export interface Job {
-  startDate: string;
-  endDate: string | null;
-  company: string;
-  link?: string;
-  role: string;
-  description: string;
-}
+export type { MyProfileType } from "./profile";
+export type { Job } from "./jobs";
