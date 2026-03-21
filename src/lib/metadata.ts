@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { env } from "@/env";
+import { MyProfile } from "@/data";
 import { generateOgImage } from "@/lib/og";
 
 export function createOpenGraph(): Metadata["openGraph"] {
-  const ogImageUrl = generateOgImage(env.siteTitle);
+  const ogImageUrl = generateOgImage(MyProfile.seo.defaultTitle);
 
   return {
-    title: env.siteTitle,
-    description: env.siteDescription,
-    url: env.siteUrl,
-    siteName: env.siteTitle,
+    title: MyProfile.seo.defaultTitle,
+    description: MyProfile.seo.defaultDescription,
+    url: MyProfile.contact.url,
+    siteName: MyProfile.name,
 
     images: [
       {
         url: ogImageUrl,
         width: 1200,
         height: 630,
-        alt: `${env.siteTitle} - Dynamic Card`,
+        alt: `${MyProfile.seo.defaultTitle} - Dynamic Card`,
       },
     ],
 
@@ -26,21 +26,12 @@ export function createOpenGraph(): Metadata["openGraph"] {
 }
 
 export const baseMetadata: Metadata = {
-  title: env.siteTitle,
-  description: env.siteDescription,
+  title: MyProfile.seo.defaultTitle,
+  description: MyProfile.seo.defaultDescription,
 
-  authors: [{ name: env.siteAuthor }],
+  authors: [{ name: MyProfile.seo.author }],
 
-  keywords: [
-    "Software",
-    "Developer",
-    "Next.js",
-    "React",
-    "JavaScript",
-    "Typescript",
-    "Node.js",
-    "Tailwind CSS",
-  ],
+  keywords: [...MyProfile.seo.keywords],
 
   openGraph: createOpenGraph(),
 };

@@ -1,5 +1,3 @@
-// utils/dateFormat.ts
-
 const months = [
   "January",
   "February",

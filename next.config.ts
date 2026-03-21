@@ -1,13 +1,13 @@
 import { withAeo } from "aeo.js/next";
-import { env } from "./src/env";
+import { MyProfile } from "./src/data";
 
 export default withAeo({
   /* config options here */
 
   aeo: {
-    title: env.siteTitle,
-    url: env.siteUrl,
-    description: env.siteDescription,
+    title: MyProfile.seo.defaultTitle,
+    url: MyProfile.contact.url,
+    description: MyProfile.seo.defaultDescription,
     generators: {
       robotsTxt: true,
       llmsTxt: true,
