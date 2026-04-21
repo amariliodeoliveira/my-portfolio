@@ -4,13 +4,13 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "My Site",
-      "url": "process.env.NEXT_PUBLIC_SITE_URL"
+      "url": "https://example.com"
     },
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "My Site",
-      "url": "process.env.NEXT_PUBLIC_SITE_URL"
+      "url": "https://example.com"
     }
   ],
   "pages": {
@@ -19,8 +19,60 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Amarilio de Oliveira",
-        "url": "process.env.NEXT_PUBLIC_SITE_URL",
-        "description": "Software Developer | Next.js | React | Typescript"
+        "url": "https://example.com",
+        "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil."
+      }
+    ],
+    "/\\about-me": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "\\about-me",
+        "url": "https://example.com/\\about-me"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://example.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "\\about me",
+            "item": "https://example.com/\\about-me"
+          }
+        ]
+      }
+    ],
+    "/\\pixi-fireworks": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "\\pixi-fireworks",
+        "url": "https://example.com/\\pixi-fireworks"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://example.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "\\pixi fireworks",
+            "item": "https://example.com/\\pixi-fireworks"
+          }
+        ]
       }
     ]
   }

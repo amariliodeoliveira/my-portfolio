@@ -15,7 +15,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --webpack",
+    "build": "next build --turbopack",
     "start": "next start",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
