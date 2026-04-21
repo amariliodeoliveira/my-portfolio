@@ -7,10 +7,10 @@ optimized for consumption by Large Language Models (LLMs) and AI assistants.
 
 ## Pages
 
-- [Amarilio de Oliveira](https://example.com)
+- [Amarilio de Oliveira](process.env.NEXT_PUBLIC_SITE_URL)
   Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil.
-- [\about-me](https://example.com/\about-me)
-- [\pixi-fireworks](https://example.com/\pixi-fireworks)
+- [\about-me](process.env.NEXT_PUBLIC_SITE_URL/\about-me)
+- [\pixi-fireworks](process.env.NEXT_PUBLIC_SITE_URL/\pixi-fireworks)
 
 ## Quick Links
 

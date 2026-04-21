@@ -1,8 +1,8 @@
 ---
 title: "Amarilio de Oliveira"
 description: "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil."
-url: https://example.com
-source: https://example.com
+url: process.env.NEXT_PUBLIC_SITE_URL
+source: process.env.NEXT_PUBLIC_SITE_URL
 generated_by: aeo.js
 ---
 

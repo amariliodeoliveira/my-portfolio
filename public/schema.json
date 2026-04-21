@@ -19,7 +19,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Amarilio de Oliveira",
-        "url": "https://example.com",
+        "url": "process.env.NEXT_PUBLIC_SITE_URL",
         "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil."
       }
     ],
@@ -28,7 +28,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "\\about-me",
-        "url": "https://example.com/\\about-me"
+        "url": "process.env.NEXT_PUBLIC_SITE_URL/\\about-me"
       },
       {
         "@context": "https://schema.org",
@@ -38,13 +38,13 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://example.com/"
+            "item": "process.env.NEXT_PUBLIC_SITE_URL/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "\\about me",
-            "item": "https://example.com/\\about-me"
+            "item": "process.env.NEXT_PUBLIC_SITE_URL/\\about-me"
           }
         ]
       }
@@ -54,7 +54,7 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "\\pixi-fireworks",
-        "url": "https://example.com/\\pixi-fireworks"
+        "url": "process.env.NEXT_PUBLIC_SITE_URL/\\pixi-fireworks"
       },
       {
         "@context": "https://schema.org",
@@ -64,13 +64,13 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://example.com/"
+            "item": "process.env.NEXT_PUBLIC_SITE_URL/"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "\\pixi fireworks",
-            "item": "https://example.com/\\pixi-fireworks"
+            "item": "process.env.NEXT_PUBLIC_SITE_URL/\\pixi-fireworks"
           }
         ]
       }

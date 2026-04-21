@@ -46,13 +46,13 @@ close
 
 # \about-me
 
-URL: https://example.com/\about-me
+URL: process.env.NEXT_PUBLIC_SITE_URL/\about-me
 
 ---
 
 # \pixi-fireworks
 
-URL: https://example.com/\pixi-fireworks
+URL: process.env.NEXT_PUBLIC_SITE_URL/\pixi-fireworks
 
 ---
 
