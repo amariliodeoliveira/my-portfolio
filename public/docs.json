@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-04-21T18:09:18.100Z",
+  "generated": "2026-04-21T22:09:09.848Z",
   "site": {
     "title": "My Site",
     "description": "",
@@ -13,11 +13,11 @@
       "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil."
     },
     {
-      "url": "https://example.com/\\about-me",
+      "url": "process.env.NEXT_PUBLIC_SITE_URL/\\about-me",
       "title": "\\about-me"
     },
     {
-      "url": "https://example.com/\\pixi-fireworks",
+      "url": "process.env.NEXT_PUBLIC_SITE_URL/\\pixi-fireworks",
       "title": "\\pixi-fireworks"
     }
   ],
