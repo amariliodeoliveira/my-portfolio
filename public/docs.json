@@ -4,11 +4,11 @@
   "site": {
     "title": "My Site",
     "description": "",
-    "url": "process.env.NEXT_PUBLIC_SITE_URL"
+    "url": "https://example.com"
   },
   "documents": [
     {
-      "url": "process.env.NEXT_PUBLIC_SITE_URL",
+      "url": "https://example.com",
       "title": "Amarilio de Oliveira",
       "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil."
     },

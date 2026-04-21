@@ -4,7 +4,7 @@
   "site": {
     "title": "My Site",
     "description": "",
-    "url": "process.env.NEXT_PUBLIC_SITE_URL"
+    "url": "https://example.com"
   },
   "entries": [
     {
@@ -44,6 +44,20 @@
         "totalChunks": 1,
         "sourcePath": "/"
       }
+    },
+    {
+      "id": "6f1cf62ac9a91aca",
+      "url": "https://example.com/\\pixi-fireworks",
+      "title": "\\pixi-fireworks",
+      "content": "\\pixi-fireworks",
+      "keywords": []
+    },
+    {
+      "id": "cda0ea73fe83bdf6",
+      "url": "https://example.com/\\about-me",
+      "title": "\\about-me",
+      "content": "\\about-me",
+      "keywords": []
     }
   ],
   "metadata": {
