@@ -4,13 +4,13 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "My Site",
-      "url": "process.env.NEXT_PUBLIC_SITE_URL"
+      "url": "https://example.com"
     },
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "My Site",
-      "url": "process.env.NEXT_PUBLIC_SITE_URL"
+      "url": "https://example.com"
     }
   ],
   "pages": {
