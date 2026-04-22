@@ -1,18 +1,32 @@
 {
   "version": "1.0",
-  "generated": "2026-03-16T20:02:07.469Z",
+  "generated": "2026-04-21T22:09:09.872Z",
   "site": {
     "title": "My Site",
     "description": "",
-    "url": "process.env.NEXT_PUBLIC_SITE_URL"
+    "url": "https://example.com"
   },
   "entries": [
+    {
+      "id": "5c5e2fa9e84c15e6",
+      "url": "process.env.NEXT_PUBLIC_SITE_URL/\\about-me",
+      "title": "\\about-me",
+      "content": "\\about-me",
+      "keywords": []
+    },
+    {
+      "id": "d615907728e63346",
+      "url": "process.env.NEXT_PUBLIC_SITE_URL/\\pixi-fireworks",
+      "title": "\\pixi-fireworks",
+      "content": "\\pixi-fireworks",
+      "keywords": []
+    },
     {
       "id": "e73977c344f94e00",
       "url": "process.env.NEXT_PUBLIC_SITE_URL",
       "title": "Amarilio de Oliveira",
-      "content": "## Amarilio de Oliveira\n\nFullstack Engineer at[SB Flex](https://sbflex.app/)\n\nGreetings! Let me introduce myself. I&#x27;m a passionate Software Engineer with a strong foundation in Frontend Development, a background in Information Systems, and a keen eye for UI/UX — also a trained gastronome with a fine taste for coffee .\n\n- Press ctrl+k to start\n\nctrlk\n\n### General\n\n- Copy URLc\n\n### Navigate to\n\n- [Homeh](/)\n- [About Mea](/about-me)\n- [Portfolios](/portfolio)\n\n### Social medias\n\n- [LinkedInl](https://www.linkedin.com/in/amariliodeoliveira/)\n- [GitHubg](https://github.com/amariliodeoliveira/)\n\nclose",
-      "description": "Software Developer | Next.js | React | Typescript",
+      "content": "## Amarilio de Oliveira\n\nFullstack Engineer at[SB Flex](https://sbflex.app/)\n\nGreetings! I&#x27;m a passionate Software Engineer with a strong foundation in Frontend Development, a background in Information Systems, and a keen eye for UI/UX — also a trained gastronome with a fine taste for coffee .\n\n- Press ctrl+k to start\n\nctrlk\n\n### General\n\n- Copy URLc\n\n### Navigate to\n\n- [Homeh](/)\n- [About Mea](/about-me)\n- [Portfolios](/portfolio)\n\n### Social medias\n\n- [LinkedInl](https://linkedin.com/in/amariliodeoliveira)\n- [GitHubg](https://github.com/amariliodeoliveira)\n\nclose",
+      "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil.",
       "keywords": [
         "https",
         "engineer",
@@ -30,10 +44,24 @@
         "totalChunks": 1,
         "sourcePath": "/"
       }
+    },
+    {
+      "id": "6f1cf62ac9a91aca",
+      "url": "https://example.com/\\pixi-fireworks",
+      "title": "\\pixi-fireworks",
+      "content": "\\pixi-fireworks",
+      "keywords": []
+    },
+    {
+      "id": "cda0ea73fe83bdf6",
+      "url": "https://example.com/\\about-me",
+      "title": "\\about-me",
+      "content": "\\about-me",
+      "keywords": []
     }
   ],
   "metadata": {
-    "totalEntries": 1,
+    "totalEntries": 3,
     "generator": "aeo.js",
     "generatorUrl": "https://aeojs.org",
     "embedding": {

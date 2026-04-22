@@ -4,13 +4,13 @@
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "My Site",
-      "url": "process.env.NEXT_PUBLIC_SITE_URL"
+      "url": "https://example.com"
     },
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "My Site",
-      "url": "process.env.NEXT_PUBLIC_SITE_URL"
+      "url": "https://example.com"
     }
   ],
   "pages": {
@@ -20,7 +20,59 @@
         "@type": "WebPage",
         "name": "Amarilio de Oliveira",
         "url": "process.env.NEXT_PUBLIC_SITE_URL",
-        "description": "Software Developer | Next.js | React | Typescript"
+        "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil."
+      }
+    ],
+    "/\\about-me": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "\\about-me",
+        "url": "process.env.NEXT_PUBLIC_SITE_URL/\\about-me"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "process.env.NEXT_PUBLIC_SITE_URL/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "\\about me",
+            "item": "process.env.NEXT_PUBLIC_SITE_URL/\\about-me"
+          }
+        ]
+      }
+    ],
+    "/\\pixi-fireworks": [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "\\pixi-fireworks",
+        "url": "process.env.NEXT_PUBLIC_SITE_URL/\\pixi-fireworks"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "process.env.NEXT_PUBLIC_SITE_URL/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "\\pixi fireworks",
+            "item": "process.env.NEXT_PUBLIC_SITE_URL/\\pixi-fireworks"
+          }
+        ]
       }
     ]
   }
