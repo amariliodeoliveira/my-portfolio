@@ -12,7 +12,7 @@ export const MyJobs: readonly Job[] = [
   },
   {
     startDate: "2025-06-02",
-    endDate: "2026-06-31",
+    endDate: "2026-05-31",
     company: "SB Flex",
     link: "https://sbflex.app/",
     role: "Fullstack Engineer",
