@@ -31,9 +31,9 @@
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "aeo.js": "^0.0.14",
-    "next": "^16.2.6",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
+    "next": "^16.2.7",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "schema-dts": "^2.0.0"
   },
   "devDependencies": {
@@ -42,11 +42,11 @@
     "@iconify/react": "^6.0.0",
     "@semantic-release/git": "^10.0.1",
     "@types/node": "^25.9.1",
-    "@types/react": "^19.2.15",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "19.2.3",
-    "daisyui": "^5.5.20",
+    "daisyui": "^5.5.23",
     "eslint": "^9.39.4",
-    "eslint-config-next": "^16.2.6",
+    "eslint-config-next": "^16.2.7",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.1.7",
     "lint-staged": "^17.0.7",
@@ -55,7 +55,7 @@
     "prettier-plugin-tailwindcss": "^0.8.0",
     "tailwindcss": "^4.0.6",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.60.0"
+    "typescript-eslint": "^8.60.1"
   },
   "volta": {
     "node": "24.15.0"
