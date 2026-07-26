@@ -27,13 +27,13 @@
     "postbuild": "node -e \"import('aeo.js/next').then(m => m.postBuild({ title: 'My Site', url: 'process.env.NEXT_PUBLIC_SITE_URL' }))\""
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.3.0",
+    "@tailwindcss/postcss": "^4.3.3",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
-    "aeo.js": "^0.0.14",
-    "next": "^16.2.7",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
+    "aeo.js": "^0.0.16",
+    "next": "^16.2.12",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "schema-dts": "^2.0.0"
   },
   "devDependencies": {
