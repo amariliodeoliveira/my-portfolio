@@ -3,14 +3,15 @@
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "name": "My Site",
-      "url": "https://example.com"
+      "name": "Amarilio de Oliveira | Software Engineer",
+      "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil.",
+      "url": "https://amarilio.tech"
     },
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "My Site",
-      "url": "https://example.com"
+      "name": "Amarilio de Oliveira | Software Engineer",
+      "url": "https://amarilio.tech"
     }
   ],
   "pages": {
@@ -19,16 +20,17 @@
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Amarilio de Oliveira",
-        "url": "process.env.NEXT_PUBLIC_SITE_URL",
+        "url": "https://amarilio.tech",
         "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil."
       }
     ],
-    "/\\about-me": [
+    "/about-me": [
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "\\about-me",
-        "url": "process.env.NEXT_PUBLIC_SITE_URL/\\about-me"
+        "name": "About-me",
+        "url": "https://amarilio.tech/about-me",
+        "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil."
       },
       {
         "@context": "https://schema.org",
@@ -38,23 +40,24 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "process.env.NEXT_PUBLIC_SITE_URL/"
+            "item": "https://amarilio.tech/"
           },
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "\\about me",
-            "item": "process.env.NEXT_PUBLIC_SITE_URL/\\about-me"
+            "name": "About me",
+            "item": "https://amarilio.tech/about-me"
           }
         ]
       }
     ],
-    "/\\pixi-fireworks": [
+    "/pixi-fireworks": [
       {
         "@context": "https://schema.org",
         "@type": "WebPage",
-        "name": "\\pixi-fireworks",
-        "url": "process.env.NEXT_PUBLIC_SITE_URL/\\pixi-fireworks"
+        "name": "Pixi-fireworks",
+        "url": "https://amarilio.tech/pixi-fireworks",
+        "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil."
       },
       {
         "@context": "https://schema.org",
@@ -64,13 +67,13 @@
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "process.env.NEXT_PUBLIC_SITE_URL/"
+            "item": "https://amarilio.tech/"
           },
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "\\pixi fireworks",
-            "item": "process.env.NEXT_PUBLIC_SITE_URL/\\pixi-fireworks"
+            "name": "Pixi fireworks",
+            "item": "https://amarilio.tech/pixi-fireworks"
           }
         ]
       }

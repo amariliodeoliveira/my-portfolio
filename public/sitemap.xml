@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>process.env.NEXT_PUBLIC_SITE_URL</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://amarilio.tech</loc>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>process.env.NEXT_PUBLIC_SITE_URL/\about-me</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://amarilio.tech/about-me</loc>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>process.env.NEXT_PUBLIC_SITE_URL/\pixi-fireworks</loc>
-    <lastmod>2026-04-21</lastmod>
+    <loc>https://amarilio.tech/pixi-fireworks</loc>
+    <lastmod>2026-08-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
