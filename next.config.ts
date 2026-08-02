@@ -1,4 +1,5 @@
 import { withAeo } from "aeo.js/next";
+
 import { MyProfile } from "./src/data";
 
 export default withAeo({

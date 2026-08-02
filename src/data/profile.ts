@@ -1,4 +1,4 @@
-import { MyProfileType } from "@/types";
+import type { MyProfileType } from "@/types";
 
 export const MyProfile: MyProfileType = {
   name: "Amarilio de Oliveira",

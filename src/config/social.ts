@@ -1,4 +1,5 @@
 import { MyProfile } from "@/data";
+
 import type { Link } from "./types";
 
 export const socialLinks: readonly Link[] = [
