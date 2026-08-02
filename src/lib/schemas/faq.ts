@@ -1,8 +1,12 @@
 import { FAQPage, WithContext } from "schema-dts";
 
+import { MyProfile } from "@/data/profile";
+
+import { SCHEMA_CONTEXT } from "./shared";
+
 export const getFAQSchema = (): WithContext<FAQPage> => {
   return {
-    "@context": "https://schema.org",
+    "@context": SCHEMA_CONTEXT,
     "@type": "FAQPage",
     mainEntity: [
       {
@@ -18,7 +22,7 @@ export const getFAQSchema = (): WithContext<FAQPage> => {
         name: "How can I contact you?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "You can contact me via email at amarilioalencar@gmail.com or through my social media links.",
+          text: `You can contact me via email at ${MyProfile.contact.email} or through my social media links.`,
         },
       },
     ],
