@@ -27,19 +27,24 @@ updates:
         dependency-type: "development"
 
     ignore:
-      # --- ESLint & Tooling (Travando na v9 para evitar quebras de CI) ---
+      # --- Lint toolchain: majors are blocked by a real, verified break ---
+      # eslint-plugin-react (bundled inside eslint-config-next) still calls the
+      # removed context.getFilename() API and crashes `npm run lint` on ESLint 10.
       - dependency-name: "eslint"
-        versions: [">= 10.0.0"]
+        update-types: ["version-update:semver-major"]
 
       - dependency-name: "@eslint/js"
-        versions: [">= 10.0.0"]
+        update-types: ["version-update:semver-major"]
 
-      - dependency-name: "@eslint/eslintrc"
-        versions: [">= 4.0.0"]
+      # typescript-eslint's peer range caps typescript at "<6.1.0" (even on its
+      # canary channel) — TS 7's native/Go compiler isn't supported yet.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
 
       - dependency-name: "typescript-eslint"
         update-types: ["version-update:semver-major"]
 
+      # Tracks the Next.js major line; review together with next itself.
       - dependency-name: "eslint-config-next"
         update-types: ["version-update:semver-major"]
 
@@ -59,7 +64,7 @@ updates:
       - dependency-name: "daisyui"
         update-types: ["version-update:semver-major"]
 
-      # --- Type definitions — must align with runtime / framework majors ---
+      # --- Type definitions — must move in lockstep with runtime/framework majors ---
       - dependency-name: "@types/react"
         update-types: ["version-update:semver-major"]
 
@@ -79,6 +84,14 @@ updates:
       time: "20:00"
       timezone: "America/Sao_Paulo"
 
-    ignore:
-      - dependency-name: "node"
-        update-types: ["version-update:semver-major"]
+    labels:
+      - "dependencies"
+      - "ci"
+
+    commit-message:
+      prefix: "chore(ci)"
+
+    groups:
+      github-actions:
+        patterns:
+          - "*"

@@ -10,6 +10,7 @@ permissions: {}
 jobs:
   check_source_branch:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Verify source branch
         if: github.base_ref == 'main' && github.head_ref != 'develop'
