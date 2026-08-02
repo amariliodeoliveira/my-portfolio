@@ -1,8 +1,9 @@
+import { Icon } from "@iconify/react";
 import Link from "next/link";
 
 import useModal from "@/hooks/useModal";
 
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { MENU_ITEM_CLASSNAME } from "./constants";
 
 interface NavigatorModalLinkProps {
   href: string;
@@ -10,6 +11,7 @@ interface NavigatorModalLinkProps {
   icon: string;
   kbd: string;
   modalId: string;
+  external?: boolean;
 }
 
 export default function NavigatorModalLink({
@@ -18,13 +20,16 @@ export default function NavigatorModalLink({
   icon,
   kbd,
   modalId,
+  external = false,
 }: NavigatorModalLinkProps) {
   const { closeModal } = useModal(modalId);
 
   return (
     <Link
       href={href}
-      className="btn btn-block hover:bg-base-300 justify-between rounded-none border-0 bg-transparent"
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className={MENU_ITEM_CLASSNAME}
       onClick={() => closeModal()}
     >
       <span className="flex gap-2">

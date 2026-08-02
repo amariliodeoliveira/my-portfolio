@@ -1,6 +1,6 @@
-import AboutHero from "@/components/layout/AboutHero";
-import NavigatorModal from "@/components/ui/NavigatorModal";
-import AboutFooter from "@/components/layout/AboutFooter";
+import AboutHero from "@/components/about-me/AboutHero";
+import Footer from "@/components/layout/Footer";
+import NavigatorModal from "@/components/ui/navigator-modal/NavigatorModal";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         <AboutHero />
         <NavigatorModal />
       </main>
-      <AboutFooter />
+      <Footer variant="inline" />
     </>
   );
 }

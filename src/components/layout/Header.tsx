@@ -1,12 +1,12 @@
 "use client";
 
+import { Icon } from "@iconify/react";
 import Link from "next/link";
+import { useEffect } from "react";
+
+import { navigationLinks } from "@/config/navigation";
 import { MyProfile } from "@/data";
 import useModal from "@/hooks/useModal";
-
-import { useEffect } from "react";
-import { navigationLinks } from "@/config/navigation";
-import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function Header() {
   const { openModal } = useModal("navigation_modal");
@@ -38,7 +38,7 @@ export default function Header() {
         </ul>
       </div>
 
-      <div className="navbar-center hidden lg:flex">
+      <nav className="navbar-center hidden lg:flex" aria-label="Main">
         <ul className="menu menu-horizontal gap-4 text-sm">
           {navigationLinks.map((link) => {
             if (link.showInNavbar === false) return null;
@@ -64,12 +64,12 @@ export default function Header() {
             );
           })}
         </ul>
-      </div>
+      </nav>
 
       <div className="navbar-end">
         <ul className="menu menu-horizontal">
           <li>
-            <button onClick={openModal}>
+            <button onClick={openModal} aria-label="Open search">
               <Icon className="size-5" icon="line-md:align-center" />
             </button>
           </li>

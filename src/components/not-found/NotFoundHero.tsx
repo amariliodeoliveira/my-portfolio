@@ -1,13 +1,12 @@
+import { Icon } from "@iconify/react";
 import Link from "next/link";
-
-import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function NotFoundHero() {
   return (
     <section className="hero bg-base-200 min-h-screen">
       <div className="hero-content text-center">
         <div className="max-w-xl text-left">
-          <span className="flex gap-2">
+          <div className="flex items-center gap-2">
             <h1 className="from-accent to-error mb-6 inline-block bg-linear-to-r bg-clip-text text-5xl font-bold text-transparent">
               Oops! Error 404
             </h1>
@@ -15,7 +14,7 @@ export default function NotFoundHero() {
               icon="line-md:alert-circle-loop"
               className="text-error size-6"
             />
-          </span>
+          </div>
 
           <p className="mb-8 font-light">
             It seems the page you&apos;re looking for doesn&apos;t exist or has

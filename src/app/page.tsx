@@ -1,6 +1,6 @@
-import Hero from "@/components/layout/Hero";
-import NavigatorModal from "@/components/ui/NavigatorModal";
+import Hero from "@/components/home/Hero";
 import Footer from "@/components/layout/Footer";
+import NavigatorModal from "@/components/ui/navigator-modal/NavigatorModal";
 import { MyProfile } from "@/data";
 import {
   getPersonSchema,
@@ -11,53 +11,34 @@ import {
 } from "@/lib/schemas";
 
 export default function Home() {
-  const personSchema = getPersonSchema();
-  const websiteSchema = getWebsiteSchema();
-  const organizationSchema = getOrganizationSchema();
-  const webPageSchema = getWebPageSchema(
-    MyProfile.contact.url,
-    MyProfile.seo.defaultTitle,
-    MyProfile.seo.defaultDescription,
-  );
-  const faqSchema = getFAQSchema();
+  // Static, fixed-order list — index keys are safe here since it's never
+  // reordered or filtered.
+  const schemas = [
+    getPersonSchema(),
+    getWebsiteSchema(),
+    getOrganizationSchema(),
+    getWebPageSchema(
+      MyProfile.contact.url,
+      MyProfile.seo.defaultTitle,
+      MyProfile.seo.defaultDescription,
+    ),
+    getFAQSchema(),
+  ];
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(personSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(websiteSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(webPageSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
-        }}
-      />
+      {schemas.map((schema, index) => (
+        <script
+          key={index}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
       <main>
         <Hero />
         <NavigatorModal />
       </main>
-      <Footer />
+      <Footer variant="overlay" />
     </>
   );
 }

@@ -1,6 +1,6 @@
-import NotFoundHero from "@/components/layout/NotFoundHero";
-import NavigatorModal from "@/components/ui/NavigatorModal";
 import Footer from "@/components/layout/Footer";
+import NotFoundHero from "@/components/not-found/NotFoundHero";
+import NavigatorModal from "@/components/ui/navigator-modal/NavigatorModal";
 
 export default function NotFound() {
   return (
@@ -9,7 +9,7 @@ export default function NotFound() {
         <NotFoundHero />
         <NavigatorModal />
       </main>
-      <Footer />
+      <Footer variant="overlay" />
     </>
   );
 }

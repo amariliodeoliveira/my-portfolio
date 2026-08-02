@@ -1,7 +1,10 @@
 "use client";
 
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
+
 import useModal from "@/hooks/useModal";
+
+import { MENU_ITEM_CLASSNAME } from "./constants";
 
 type NavigatorModalLinkCopyUrlProps = {
   query: string;
@@ -25,10 +28,7 @@ export default function NavigatorModalLinkCopyUrl({
   };
 
   return (
-    <button
-      className="btn btn-block hover:bg-base-300 justify-between rounded-none border-0 bg-transparent"
-      onClick={handleClick}
-    >
+    <button className={MENU_ITEM_CLASSNAME} onClick={handleClick}>
       <span className="flex gap-2">
         <Icon className="size-5" icon="line-md:link" />
         {label}
