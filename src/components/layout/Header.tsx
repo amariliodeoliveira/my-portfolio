@@ -69,8 +69,8 @@ export default function Header() {
       <div className="navbar-end">
         <ul className="menu menu-horizontal">
           <li>
-            <button onClick={openModal} aria-label="Open search">
-              <Icon className="size-5" icon="line-md:align-center" />
+            <button onClick={openModal} aria-label="Open menu">
+              <Icon className="size-5" icon="line-md:menu" />
             </button>
           </li>
         </ul>

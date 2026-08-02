@@ -16,10 +16,10 @@ test.describe("navigator modal", () => {
     await expect(page.locator(SEARCH_INPUT)).toBeFocused();
   });
 
-  test("the header search button opens the modal too", async ({ page }) => {
+  test("the header menu button opens the modal too", async ({ page }) => {
     await page.goto("/");
 
-    await page.getByRole("button", { name: "Open search" }).click();
+    await page.getByRole("button", { name: "Open menu" }).click();
 
     await expect(page.locator(NAVIGATOR_MODAL)).toBeVisible();
   });
