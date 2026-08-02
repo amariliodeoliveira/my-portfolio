@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 import { navigationLinks } from "@/config/navigation";
 import { socialLinks } from "@/config/social";
@@ -20,10 +20,15 @@ const shortcutLinks = navigationLinks.flatMap(
 // no longer visible.
 const QUERY_RESET_DELAY_MS = 300;
 
+// Selects every focusable row inside the modal box (search input + menu
+// links/buttons), in the order they appear on screen.
+const FOCUSABLE_SELECTOR = "input, a[href], button";
+
 export default function NavigatorModal() {
   const router = useRouter();
   const { closeModal } = useModal("navigation_modal");
   const [query, setQuery] = useState("");
+  const modalBoxRef = useRef<HTMLDivElement>(null);
 
   const handleClose = () => {
     closeModal();
@@ -33,7 +38,29 @@ export default function NavigatorModal() {
     }, QUERY_RESET_DELAY_MS);
   };
 
+  const moveFocus = (direction: 1 | -1) => {
+    const modalBox = modalBoxRef.current;
+    if (!modalBox) return;
+
+    const items = Array.from(
+      modalBox.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+    );
+    if (items.length === 0) return;
+
+    const currentIndex = items.indexOf(document.activeElement as HTMLElement);
+    const nextIndex = (currentIndex + direction + items.length) % items.length;
+    items[nextIndex]?.focus();
+  };
+
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDialogElement>) => {
+    // Arrow keys move focus between rows regardless of where focus currently
+    // is (including the search box), so the modal doesn't get "stuck" there.
+    if (e.key === "ArrowDown" || e.key === "ArrowUp") {
+      e.preventDefault();
+      moveFocus(e.key === "ArrowDown" ? 1 : -1);
+      return;
+    }
+
     // Shortcuts never fire while the search box has focus, so they can never
     // hijack a keystroke meant for the query (e.g. typing "home").
     const target = e.target as HTMLElement;
@@ -74,7 +101,10 @@ export default function NavigatorModal() {
       onClose={handleClose}
       onKeyDown={handleKeyDown}
     >
-      <div className="modal-box bg-base-300/40 overflow-hidden p-0 backdrop-blur-3xl">
+      <div
+        ref={modalBoxRef}
+        className="modal-box bg-base-300/40 overflow-hidden p-0 backdrop-blur-3xl"
+      >
         <NavigatorModalSearch query={query} setQuery={setQuery} />
         <NavigatorModalMenu query={query} />
       </div>
