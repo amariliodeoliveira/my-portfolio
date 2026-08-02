@@ -17,6 +17,7 @@ export default function AboutHero() {
             <Image
               src={ProfilePic}
               alt={MyProfile.name}
+              priority
               className="size-fit max-h-64 max-w-80 rounded-lg shadow-2xl"
             />
 
