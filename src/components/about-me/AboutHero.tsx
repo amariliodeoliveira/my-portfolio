@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { MyProfile } from "@/data";
 import ProfilePic from "@img/profile-oficial.jpeg";
+
 import AboutHeroTimeline from "./AboutHeroTimeline";
 
 export default function AboutHero() {
@@ -12,10 +13,11 @@ export default function AboutHero() {
           <h1 className="from-accent via-primary to-secondary bg-linear-to-r bg-clip-text pb-6 text-5xl font-bold text-transparent md:pb-4">
             {MyProfile.about.title}
           </h1>
-          <div className="flex flex-wrap gap-8 md:flex-nowrap md:gap-8 lg:gap-16">
+          <div className="flex flex-wrap gap-8 md:flex-nowrap lg:gap-16">
             <Image
               src={ProfilePic}
               alt={MyProfile.name}
+              priority
               className="size-fit max-h-64 max-w-80 rounded-lg shadow-2xl"
             />
 

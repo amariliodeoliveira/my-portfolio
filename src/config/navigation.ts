@@ -18,13 +18,13 @@ export const navigationLinks: readonly Link[] = [
     href: "/portfolio",
     label: "Portfolio",
     icon: "line-md:computer",
-    kbd: "s",
 
     sublinks: [
       {
         href: "/pixi-fireworks",
         label: "PixiJS - Fireworks Presentation",
         icon: "line-md:computer",
+        kbd: "s",
       },
     ],
   },

@@ -1,11 +1,15 @@
 import { Person, WithContext } from "schema-dts";
+
 import { MyProfile, MyJobs } from "@/data";
+import { getCurrentJob } from "@/utils/jobs";
+
+import { getSameAs, SCHEMA_CONTEXT } from "./shared";
 
 export const getPersonSchema = (): WithContext<Person> => {
-  const currentJob = MyJobs.find((job) => job.endDate === null);
+  const currentJob = getCurrentJob(MyJobs);
 
   return {
-    "@context": "https://schema.org",
+    "@context": SCHEMA_CONTEXT,
     "@type": "Person",
     name: MyProfile.name,
     givenName: MyProfile.firstName,
@@ -26,7 +30,7 @@ export const getPersonSchema = (): WithContext<Person> => {
           url: currentJob.link,
         }
       : undefined,
-    sameAs: Object.values(MyProfile.socials).filter(Boolean),
+    sameAs: getSameAs(),
     alumniOf: MyProfile.education.map((edu) => ({
       "@type": "EducationalOrganization",
       name: `${edu.degree} at ${edu.institution}`,

@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
 import { MyProfile } from "@/data";
 import { generateOgImage } from "@/lib/og";
+
+import type { Metadata } from "next";
 
 export function createOpenGraph(): Metadata["openGraph"] {
   const ogImageUrl = generateOgImage(MyProfile.seo.defaultTitle);

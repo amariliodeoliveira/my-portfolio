@@ -1,6 +1,6 @@
 "use client";
 
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 
 type NavigatorModalSearchProps = {
   query: string;
@@ -19,6 +19,7 @@ export default function NavigatorModalSearch({
       <input
         type="search"
         id="navigation_search"
+        aria-label="Search"
         autoComplete="off"
         className="grow"
         placeholder="Search"

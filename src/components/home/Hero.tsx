@@ -1,12 +1,12 @@
+import { InlineIcon } from "@iconify/react";
 import Link from "next/link";
 
+import KbdMenuButton from "@/components/ui/KbdMenuButton";
 import { MyProfile, MyJobs } from "@/data";
-import { InlineIcon } from "@iconify/react/dist/iconify.js";
-
-import KbdMenuButton from "../ui/KbdMenuButton";
+import { getCurrentJob } from "@/utils/jobs";
 
 export default function Hero() {
-  const currentJob = MyJobs.find((job) => job.endDate === null);
+  const currentJob = getCurrentJob(MyJobs);
 
   return (
     <section className="hero bg-base-200 min-h-screen">
@@ -17,13 +17,13 @@ export default function Hero() {
           </h1>
           <div className="mb-4 flex flex-col gap-1">
             {currentJob && (
-              <p className="flex gap-1.5 font-bold">
+              <p className="flex gap-2 font-bold">
                 {currentJob.role} at
                 {currentJob.link ? (
                   <Link
                     href={currentJob.link}
                     target="_blank"
-                    rel="opener noreferrer"
+                    rel="noopener noreferrer"
                     className="link link-hover text-primary group flex items-center gap-1"
                   >
                     <span>{currentJob.company}</span>

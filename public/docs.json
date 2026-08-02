@@ -1,24 +1,26 @@
 {
   "version": "1.0",
-  "generated": "2026-04-21T22:09:09.848Z",
+  "generated": "2026-08-02T00:31:02.229Z",
   "site": {
-    "title": "My Site",
-    "description": "",
-    "url": "https://example.com"
+    "title": "Amarilio de Oliveira | Software Engineer",
+    "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil.",
+    "url": "https://amarilio.tech"
   },
   "documents": [
     {
-      "url": "https://example.com",
+      "url": "https://amarilio.tech",
       "title": "Amarilio de Oliveira",
       "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil."
     },
     {
-      "url": "process.env.NEXT_PUBLIC_SITE_URL/\\about-me",
-      "title": "\\about-me"
+      "url": "https://amarilio.tech/about-me",
+      "title": "About-me",
+      "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil."
     },
     {
-      "url": "process.env.NEXT_PUBLIC_SITE_URL/\\pixi-fireworks",
-      "title": "\\pixi-fireworks"
+      "url": "https://amarilio.tech/pixi-fireworks",
+      "title": "Pixi-fireworks",
+      "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil."
     }
   ],
   "metadata": {

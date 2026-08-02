@@ -1,18 +1,33 @@
-import AboutFooter from "@/components/layout/AboutFooter";
-import NavigatorModal from "@/components/ui/NavigatorModal";
+import Footer from "@/components/layout/Footer";
+import PixiFireworksUnavailable from "@/components/pixi-fireworks/PixiFireworksUnavailable";
+import NavigatorModal from "@/components/ui/navigator-modal/NavigatorModal";
+import { PIXI_FIREWORKS_URL } from "@/config/pixiFireworks";
+import { isUrlReachable } from "@/utils/isUrlReachable";
 
-export default function Home() {
+// Checked on every request (no caching) rather than revalidated on a timer:
+// a visitor who hits a broken iframe won't sit around waiting for ISR to
+// pick up that the demo is back — each visit should reflect the current
+// state.
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
+  const isAvailable = await isUrlReachable(PIXI_FIREWORKS_URL);
+
   return (
     <>
       <main>
-        <iframe
-          src="https://fireworks.amarilio.tech/"
-          style={{ width: "100%", height: "100vh", border: "none" }}
-          title="Fireworks"
-        />
+        {isAvailable ? (
+          <iframe
+            src={PIXI_FIREWORKS_URL}
+            className="h-screen w-full border-none"
+            title="Fireworks"
+          />
+        ) : (
+          <PixiFireworksUnavailable />
+        )}
         <NavigatorModal />
       </main>
-      <AboutFooter />
+      <Footer variant="inline" />
     </>
   );
 }

@@ -1,5 +1,8 @@
 import { WebPage, WithContext } from "schema-dts";
+
 import { MyProfile } from "@/data/profile";
+
+import { getAuthorPublisher, SCHEMA_CONTEXT } from "./shared";
 
 export const getWebPageSchema = (
   url: string,
@@ -7,7 +10,7 @@ export const getWebPageSchema = (
   description: string,
 ): WithContext<WebPage> => {
   return {
-    "@context": "https://schema.org",
+    "@context": SCHEMA_CONTEXT,
     "@type": "WebPage",
     name: title,
     description: description,
@@ -17,14 +20,7 @@ export const getWebPageSchema = (
       name: MyProfile.seo.defaultTitle,
       url: MyProfile.contact.url,
     },
-    author: {
-      "@type": "Person",
-      name: MyProfile.name,
-    },
-    publisher: {
-      "@type": "Person",
-      name: MyProfile.name,
-    },
+    ...getAuthorPublisher(),
     inLanguage: "en-US",
   };
 };

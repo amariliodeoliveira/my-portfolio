@@ -1,18 +1,14 @@
+import { Icon } from "@iconify/react";
+
 import { MyJobs } from "@/data/jobs";
 import { formatDate } from "@/utils/dateFormat";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { getJobEndTimestamp } from "@/utils/jobs";
 
 import AboutHeroTimelineLink from "./AboutHeroTimelineLink";
 
-const sortedJobs = [...MyJobs].sort((a, b) => {
-  const dateA = a.endDate
-    ? new Date(a.endDate).getTime()
-    : new Date("9999-12-31").getTime();
-  const dateB = b.endDate
-    ? new Date(b.endDate).getTime()
-    : new Date("9999-12-31").getTime();
-  return dateB - dateA;
-});
+const sortedJobs = [...MyJobs].sort(
+  (a, b) => getJobEndTimestamp(b) - getJobEndTimestamp(a),
+);
 
 export default function AboutHeroTimeline() {
   return (
@@ -38,7 +34,7 @@ export default function AboutHeroTimeline() {
                 className={`${index % 2 === 0 ? "timeline-start mb-10 md:text-end" : "timeline-end md:mb-10"}`}
               >
                 <time className="text-sm font-light italic">{dateRange}</time>
-                <div className="text-light/tight my-2">
+                <div className="my-2 leading-tight">
                   <AboutHeroTimelineLink
                     label={job.company}
                     href={job.link}
