@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated": "2026-08-02T00:31:02.247Z",
+  "generated": "2026-08-26T03:20:00.148Z",
   "site": {
     "title": "Amarilio de Oliveira | Software Engineer",
     "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil.",
@@ -19,19 +19,19 @@
       "id": "21a83d654c90231f",
       "url": "https://amarilio.tech",
       "title": "Amarilio de Oliveira",
-      "content": "## Amarilio de Oliveira\n\nSoftware Engineer at[Hospedin](https://hospedin.com/)\n\nGreetings! I&#x27;m a passionate Software Engineer with a strong foundation in Frontend Development, a background in Information Systems, and a keen eye for UI/UX — also a trained gastronome with a fine taste for coffee .\n\nPress ctrl+k to start\n\nctrlk\n\n### General\n\n- Copy URLc\n\n### Navigate to\n\n- [Homeh](/)\n- [About Mea](/about-me)\n- [PixiJS - Fireworks Presentation](/pixi-fireworks)\n\n### Social medias\n\n- [LinkedInl](https://linkedin.com/in/amariliodeoliveira)\n- [GitHubg](https://github.com/amariliodeoliveira)\n\nclose",
+      "content": "## Amarilio de Oliveira\n\nSoftware Engineer at[Hospedin](https://hospedin.com/)\n\nGreetings! I&#x27;m a Software Engineer with a frontend heart and fullstack hands, using AI as part of my development process to build product interfaces, APIs, and reliable web experiences with a suspicious amount of coffee .\n\nPress ctrl+k to start\n\nclose",
       "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil.",
       "keywords": [
-        "https",
         "software",
         "engineer",
         "hospedin",
         "with",
-        "amariliodeoliveira",
         "amarilio",
         "oliveira",
+        "https",
         "greetings",
-        "passionate"
+        "frontend",
+        "heart"
       ],
       "metadata": {
         "chunkIndex": 0,
