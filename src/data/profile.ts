@@ -31,14 +31,16 @@ export const MyProfile: MyProfileType = {
   about: {
     title: "Turning Coffee Into Code!",
     shortBio:
-      "Greetings! 👋 I'm a passionate Software Engineer with a strong foundation in Frontend Development, a background in Information Systems, and a keen eye for UI/UX — also a trained gastronome with a fine taste for coffee ☕.",
-    fullBio: `I've been passionate about technology for as long as I can remember, but it was in my early teens that I first wrote a Hello World— a simple yet defining moment that sparked my deep curiosity about how things work behind the scenes. Since then, I've been on a continuous journey of learning, exploring, and building.
+      "Greetings! 👋 I'm a Software Engineer with a frontend heart and fullstack hands, using AI as part of my development process to build product interfaces, APIs, and reliable web experiences with a suspicious amount of coffee ☕.",
+    fullBio: `I've been curious about technology for as long as I can remember. In my early teens, I wrote my first Hello World, and what started as curiosity about how things worked behind the scenes eventually became my career.
 
-With over three years of professional experience in software development, and more than five years of academic dedication, I've worked with a diverse range of technologies, always striving to refine my skills and embrace new challenges. Problem-solving, clean code, and efficiency are at the core of my approach, and I'm always eager to explore new and innovative solutions.
+Today, I'm a Software Engineer with 3+ years of professional experience and a strong frontend focus. I work primarily with React, Next.js, and TypeScript, while also contributing across the stack with Ruby on Rails, Node.js, and NestJS. My experience ranges from user-facing interfaces and complex product flows to REST APIs, integrations, automated testing, and the engineering practices that support reliable software delivery.
 
-Beyond coding, I have a strong connection with another world — Gastronomy. As a trained and post-graduated professional in the field, I've developed not only a refined palate but also invaluable soft skills such as attention to detail, adaptability, and teamwork. Whether in the kitchen or in development, I thrive on creativity, precision, and continuous improvement.
+I'm also interested in how software development is evolving with AI. I use AI-assisted workflows and Spec-Driven Development to support implementation, code review, documentation, and software quality, treating AI as part of the engineering process rather than a replacement for engineering judgment.
 
-Technology and gastronomy may seem like separate worlds, but for me, they share a common thread: the ability to create, transform, and deliver exceptional experiences.`,
+Before software became my profession, I trained in Gastronomy, a very different field that still influences the way I work today. It taught me creativity, attention to detail, adaptability, teamwork, and how much execution matters when turning an idea into something people actually experience.
+
+Whether I'm refining an interface, understanding an unfamiliar codebase, or designing a better development workflow, I enjoy solving problems, learning how things work, and turning complexity into something useful.`,
   },
   skills: {
     core: [

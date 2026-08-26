@@ -22,7 +22,11 @@ export default function AboutHeroTimelineLink({
             className={`link link-hover flex items-center gap-1 underline-offset-2 ${isEven ? "md:justify-end" : ""}`}
           >
             {label}
-            <Icon icon="line-md:external-link" className="size-3" />
+            <Icon
+              icon="line-md:external-link"
+              aria-hidden="true"
+              className="size-3"
+            />
           </span>
         </Link>
       ) : (

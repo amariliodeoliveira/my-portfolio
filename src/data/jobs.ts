@@ -8,7 +8,7 @@ export const MyJobs: readonly Job[] = [
     link: "https://hospedin.com/",
     role: "Software Engineer",
     description:
-      "Contributing to the development and evolution of Hospedin's SaaS platform for hotel and hospitality management.",
+      "Building and evolving product features for a hospitality management SaaS, working across frontend delivery, API integration, and maintainable React/TypeScript interfaces.",
   },
   {
     startDate: "2025-06-02",
@@ -17,7 +17,7 @@ export const MyJobs: readonly Job[] = [
     link: "https://sbflex.app/",
     role: "Fullstack Engineer",
     description:
-      "Responsible for building scalable UI components with React, Next.js, and TypeScript, having applied CPC architecture in a delivered project to ensure separation of concerns. I build out responsive, accessible interfaces using Tailwind CSS and Radix UI, integrating them with RESTful APIs to align frontend requirements with backend data contracts. I also handle backend tasks by developing and refining endpoints with Node.js and Nest.js to support new features. To ensure reliability, I maintain high code quality through Jest unit and integration testing, while staying active in sprint planning and documentation-first workflows for smooth async collaboration.",
+      "Delivered fullstack features with React, Next.js, TypeScript, Node.js, and NestJS, combining accessible UI components, REST API integration, backend endpoints, and Jest coverage in documentation-first workflows.",
   },
   {
     startDate: "2023-03-06",
@@ -26,7 +26,7 @@ export const MyJobs: readonly Job[] = [
     link: undefined,
     role: "Frontend Engineer",
     description:
-      "Built responsive, scalable interfaces using React, Next.js, and TypeScript, leveraging modular architecture and reusable components for long-term maintainability. I also focused heavily on application performance, where I optimized SSR/SSG applications based on Lighthouse metrics to enhance SEO and reduce page load times. Furthermore, I spearheaded the adoption of daisyUI to develop a custom design system that unified styling across our platforms. State management was handled efficiently via Redux and useContext, while Next.js Route Handlers were used to integrate RESTful APIs for dynamic data operations. To wrap up the workflow, I followed CI/CD best practices with GitHub Actions and collaborated closely in an Agile (Kanban) environment to ensure high code quality and reliable deployments.",
+      "Developed responsive React, Next.js, and TypeScript interfaces with reusable architecture, performance-focused SSR/SSG optimizations, REST integrations, Redux/useContext state management, and GitHub Actions delivery.",
   },
   {
     startDate: "2020-04-01",
@@ -35,6 +35,6 @@ export const MyJobs: readonly Job[] = [
     link: undefined,
     role: "WordPress Developer",
     description:
-      "Developed a responsive, multilingual web application (Portuguese, English, and French) in WordPress for an architecture consultancy in Toronto, Canada, while ensuring the website met client needs and provided a seamless user experience across multiple languages and devices.",
+      "Built a responsive multilingual WordPress site for an architecture consultancy, delivering Portuguese, English, and French experiences with a clean client-editable structure.",
   },
 ] as const;
