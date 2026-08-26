@@ -106,11 +106,11 @@ export default function PixiFireworksDemo() {
           <div className="mockup-window border-base-content/10 bg-base-300 relative border">
             <p
               title="PixiJS · XML scheduling · WebGL particles"
-              className="text-base-content/50 pointer-events-none absolute inset-x-0 top-[1.625rem] -translate-y-1/2 truncate px-20 text-center text-[0.6875rem] sm:text-xs"
+              className="text-base-content/50 pointer-events-none absolute inset-x-0 top-6.5 -translate-y-1/2 truncate px-20 text-center text-[0.6875rem] sm:text-xs"
             >
               PixiJS · XML scheduling · WebGL particles
             </p>
-            <div className="bg-base-200 relative h-[26rem] sm:h-[30rem] lg:h-[34rem]">
+            <div className="bg-base-200 relative h-104 sm:h-120 lg:h-136">
               {!isLoaded && (
                 <div
                   className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 text-center"
@@ -132,7 +132,7 @@ export default function PixiFireworksDemo() {
                 title="PixiJS fireworks interactive demo"
                 loading="eager"
                 onLoad={handleIframeLoad}
-                className={`h-full w-full border-none transition-opacity duration-300 ${
+                className={`size-full border-none transition-opacity duration-300 ${
                   isLoaded ? "opacity-100" : "opacity-0"
                 }`}
               />

@@ -22,8 +22,8 @@ export default function NavigatorModalLinkCopyUrl({
   }
 
   const handleClick = () => {
-    const url = new URL(window.location.href);
-    navigator.clipboard.writeText(url.toString());
+    const url = new URL(globalThis.location.href);
+    void navigator.clipboard.writeText(url.toString());
     closeModal();
   };
 

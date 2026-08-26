@@ -1,7 +1,7 @@
+import ProfilePic from "@img/profile-oficial.jpeg";
 import Image from "next/image";
 
 import { MyProfile } from "@/data";
-import ProfilePic from "@img/profile-oficial.jpeg";
 
 import AboutHeroTimeline from "./AboutHeroTimeline";
 

@@ -8,7 +8,7 @@ import { getJobEndTimestamp } from "@/utils/jobs";
 
 import AboutHeroTimelineLink from "./AboutHeroTimelineLink";
 
-const sortedJobs = [...MyJobs].sort(
+const sortedJobs = MyJobs.toSorted(
   (a, b) => getJobEndTimestamp(b) - getJobEndTimestamp(a),
 );
 

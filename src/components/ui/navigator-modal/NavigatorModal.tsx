@@ -40,9 +40,9 @@ export default function NavigatorModal() {
   const modalBoxRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const modal = document.getElementById(
-      NAVIGATION_MODAL_ID,
-    ) as HTMLDialogElement | null;
+    const modal = document.querySelector<HTMLDialogElement>(
+      `#${NAVIGATION_MODAL_ID}`,
+    );
 
     queueMicrotask(() => {
       if (!modal?.open) return;
@@ -66,26 +66,26 @@ export default function NavigatorModal() {
       setIsOpen(false);
     };
 
-    window.addEventListener(MODAL_OPEN_EVENT, handleOpen);
-    window.addEventListener(MODAL_CLOSE_EVENT, handleExternalClose);
+    globalThis.addEventListener(MODAL_OPEN_EVENT, handleOpen);
+    globalThis.addEventListener(MODAL_CLOSE_EVENT, handleExternalClose);
 
     return () => {
-      window.removeEventListener(MODAL_OPEN_EVENT, handleOpen);
-      window.removeEventListener(MODAL_CLOSE_EVENT, handleExternalClose);
+      globalThis.removeEventListener(MODAL_OPEN_EVENT, handleOpen);
+      globalThis.removeEventListener(MODAL_CLOSE_EVENT, handleExternalClose);
     };
   }, []);
 
   useEffect(() => {
     if (!isOpen) return;
 
-    const focusTimeout = window.setTimeout(() => {
+    const focusTimeout = globalThis.setTimeout(() => {
       const input = modalBoxRef.current?.querySelector(
         'input[type="search"]',
       ) as HTMLInputElement | null;
       input?.focus();
     }, SEARCH_INPUT_FOCUS_DELAY_MS);
 
-    return () => window.clearTimeout(focusTimeout);
+    return () => globalThis.clearTimeout(focusTimeout);
   }, [isOpen, openRenderKey]);
 
   const handleClose = () => {
@@ -100,14 +100,14 @@ export default function NavigatorModal() {
     const modalBox = modalBoxRef.current;
     if (!modalBox) return;
 
-    const items = Array.from(
-      modalBox.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
-    );
+    const items = [
+      ...modalBox.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+    ];
     if (items.length === 0) return;
 
     const currentIndex = items.indexOf(document.activeElement as HTMLElement);
     const nextIndex = (currentIndex + direction + items.length) % items.length;
-    items[nextIndex]?.focus();
+    items.at(nextIndex)?.focus();
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDialogElement>) => {
@@ -131,7 +131,7 @@ export default function NavigatorModal() {
 
     if (key === "c") {
       e.preventDefault();
-      navigator.clipboard.writeText(window.location.href);
+      void navigator.clipboard.writeText(globalThis.location.href);
       closeModal();
       return;
     }
@@ -140,7 +140,7 @@ export default function NavigatorModal() {
     if (socialMatch) {
       e.preventDefault();
       closeModal();
-      window.open(socialMatch.href, "_blank", "noopener,noreferrer");
+      globalThis.open(socialMatch.href, "_blank", "noopener,noreferrer");
       return;
     }
 
@@ -150,7 +150,7 @@ export default function NavigatorModal() {
       closeModal();
 
       if (navMatch.openInNewTab) {
-        window.open(navMatch.href, "_blank", "noopener,noreferrer");
+        globalThis.open(navMatch.href, "_blank", "noopener,noreferrer");
         return;
       }
 

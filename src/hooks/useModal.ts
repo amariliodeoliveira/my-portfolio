@@ -6,12 +6,12 @@ export const MODAL_OPEN_EVENT = "modal:open";
 export const MODAL_CLOSE_EVENT = "modal:close";
 
 const dispatchModalEvent = (eventName: string, modalId: string) => {
-  window.dispatchEvent(new CustomEvent(eventName, { detail: { modalId } }));
+  globalThis.dispatchEvent(new CustomEvent(eventName, { detail: { modalId } }));
 };
 
 const useModal = (modalId: string) => {
   const getModal = useCallback(() => {
-    return document.getElementById(modalId) as HTMLDialogElement | null;
+    return document.querySelector<HTMLDialogElement>(`#${modalId}`);
   }, [modalId]);
 
   const openModal = useCallback(() => {
