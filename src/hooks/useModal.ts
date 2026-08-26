@@ -2,9 +2,12 @@
 
 import { useCallback } from "react";
 
-// Gives the browser's open-dialog transition/animation time to finish before
-// we steal focus, so the search input doesn't jump while it's still animating in.
-const SEARCH_INPUT_FOCUS_DELAY_MS = 150;
+export const MODAL_OPEN_EVENT = "modal:open";
+export const MODAL_CLOSE_EVENT = "modal:close";
+
+const dispatchModalEvent = (eventName: string, modalId: string) => {
+  window.dispatchEvent(new CustomEvent(eventName, { detail: { modalId } }));
+};
 
 const useModal = (modalId: string) => {
   const getModal = useCallback(() => {
@@ -16,23 +19,18 @@ const useModal = (modalId: string) => {
 
     if (modal) {
       modal.showModal();
-
-      setTimeout(() => {
-        const input = modal.querySelector(
-          'input[type="search"]',
-        ) as HTMLInputElement | null;
-        input?.focus();
-      }, SEARCH_INPUT_FOCUS_DELAY_MS);
+      dispatchModalEvent(MODAL_OPEN_EVENT, modalId);
     }
-  }, [getModal]);
+  }, [getModal, modalId]);
 
   const closeModal = useCallback(() => {
     const modal = getModal();
 
     if (modal) {
       modal.close();
+      dispatchModalEvent(MODAL_CLOSE_EVENT, modalId);
     }
-  }, [getModal]);
+  }, [getModal, modalId]);
 
   return { openModal, closeModal };
 };

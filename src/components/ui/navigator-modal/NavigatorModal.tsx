@@ -1,11 +1,14 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { navigationLinks } from "@/config/navigation";
 import { socialLinks } from "@/config/social";
-import useModal from "@/hooks/useModal";
+import useModal, {
+  MODAL_CLOSE_EVENT,
+  MODAL_OPEN_EVENT,
+} from "@/hooks/useModal";
 
 import NavigatorModalMenu from "./NavigatorModalMenu";
 import NavigatorModalSearch from "./NavigatorModalSearch";
@@ -19,19 +22,74 @@ const shortcutLinks = navigationLinks.flatMap(
 // Matches the modal's closing transition, so the query only clears once it's
 // no longer visible.
 const QUERY_RESET_DELAY_MS = 300;
+const SEARCH_INPUT_FOCUS_DELAY_MS = 150;
 
 // Selects every focusable row inside the modal box (search input + menu
 // links/buttons), in the order they appear on screen.
 const FOCUSABLE_SELECTOR = "input, a[href], button";
+const NAVIGATION_MODAL_ID = "navigation_modal";
+
+type ModalLifecycleEvent = CustomEvent<{ modalId: string }>;
 
 export default function NavigatorModal() {
   const router = useRouter();
-  const { closeModal } = useModal("navigation_modal");
+  const { closeModal } = useModal(NAVIGATION_MODAL_ID);
   const [query, setQuery] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+  const [openRenderKey, setOpenRenderKey] = useState(0);
   const modalBoxRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    const modal = document.getElementById(
+      NAVIGATION_MODAL_ID,
+    ) as HTMLDialogElement | null;
+
+    queueMicrotask(() => {
+      if (!modal?.open) return;
+
+      setIsOpen(true);
+      setOpenRenderKey((key) => key + 1);
+    });
+
+    const handleOpen = (event: Event) => {
+      const { modalId } = (event as ModalLifecycleEvent).detail;
+      if (modalId !== NAVIGATION_MODAL_ID) return;
+
+      setIsOpen(true);
+      setOpenRenderKey((key) => key + 1);
+    };
+
+    const handleExternalClose = (event: Event) => {
+      const { modalId } = (event as ModalLifecycleEvent).detail;
+      if (modalId !== NAVIGATION_MODAL_ID) return;
+
+      setIsOpen(false);
+    };
+
+    window.addEventListener(MODAL_OPEN_EVENT, handleOpen);
+    window.addEventListener(MODAL_CLOSE_EVENT, handleExternalClose);
+
+    return () => {
+      window.removeEventListener(MODAL_OPEN_EVENT, handleOpen);
+      window.removeEventListener(MODAL_CLOSE_EVENT, handleExternalClose);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const focusTimeout = window.setTimeout(() => {
+      const input = modalBoxRef.current?.querySelector(
+        'input[type="search"]',
+      ) as HTMLInputElement | null;
+      input?.focus();
+    }, SEARCH_INPUT_FOCUS_DELAY_MS);
+
+    return () => window.clearTimeout(focusTimeout);
+  }, [isOpen, openRenderKey]);
+
   const handleClose = () => {
-    closeModal();
+    setIsOpen(false);
 
     setTimeout(() => {
       setQuery("");
@@ -90,13 +148,19 @@ export default function NavigatorModal() {
     if (navMatch) {
       e.preventDefault();
       closeModal();
+
+      if (navMatch.openInNewTab) {
+        window.open(navMatch.href, "_blank", "noopener,noreferrer");
+        return;
+      }
+
       router.push(navMatch.href);
     }
   };
 
   return (
     <dialog
-      id="navigation_modal"
+      id={NAVIGATION_MODAL_ID}
       className="modal"
       onClose={handleClose}
       onKeyDown={handleKeyDown}
@@ -105,8 +169,12 @@ export default function NavigatorModal() {
         ref={modalBoxRef}
         className="modal-box bg-base-300/40 overflow-hidden p-0 backdrop-blur-3xl"
       >
-        <NavigatorModalSearch query={query} setQuery={setQuery} />
-        <NavigatorModalMenu query={query} />
+        {isOpen && (
+          <div key={openRenderKey}>
+            <NavigatorModalSearch query={query} setQuery={setQuery} />
+            <NavigatorModalMenu query={query} />
+          </div>
+        )}
       </div>
 
       <form method="dialog" className="modal-backdrop">

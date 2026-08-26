@@ -2,7 +2,7 @@
 
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { navigationLinks } from "@/config/navigation";
 import { MyProfile } from "@/data";
@@ -10,6 +10,8 @@ import useModal from "@/hooks/useModal";
 
 export default function Header() {
   const { openModal } = useModal("navigation_modal");
+  const [openDropdownHref, setOpenDropdownHref] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLLIElement>(null);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -22,6 +24,28 @@ export default function Header() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [openModal]);
+
+  useEffect(() => {
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!dropdownRef.current?.contains(event.target as Node)) {
+        setOpenDropdownHref(null);
+      }
+    };
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenDropdownHref(null);
+      }
+    };
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
 
   return (
     <header className="navbar absolute top-0 bg-transparent uppercase backdrop-blur-xl">
@@ -44,21 +68,48 @@ export default function Header() {
             if (link.showInNavbar === false) return null;
 
             return (
-              <li key={link.href}>
+              <li key={link.href} ref={link.sublinks ? dropdownRef : undefined}>
                 {link.sublinks ? (
-                  <details>
-                    <summary>{link.label}</summary>
+                  <details open={openDropdownHref === link.href}>
+                    <summary
+                      onClick={(event) => {
+                        event.preventDefault();
+                        setOpenDropdownHref((currentHref) =>
+                          currentHref === link.href ? null : link.href,
+                        );
+                      }}
+                    >
+                      {link.label}
+                    </summary>
 
                     <ul className="w-fit">
                       {link.sublinks.map((sublink) => (
                         <li key={sublink.href}>
-                          <Link href={sublink.href}>{sublink.label}</Link>
+                          <Link
+                            href={sublink.href}
+                            onClick={() => setOpenDropdownHref(null)}
+                          >
+                            {sublink.label}
+                          </Link>
                         </li>
                       ))}
                     </ul>
                   </details>
                 ) : (
-                  <Link href={link.href}>{link.label}</Link>
+                  <Link
+                    href={link.href}
+                    aria-label={link.ariaLabel}
+                    download={link.download}
+                    target={link.openInNewTab ? "_blank" : undefined}
+                    rel={link.openInNewTab ? "noopener noreferrer" : undefined}
+                    className={
+                      link.ctaVariant === "primary"
+                        ? "bg-primary text-primary-content hover:bg-primary/90"
+                        : ""
+                    }
+                  >
+                    {link.label}
+                  </Link>
                 )}
               </li>
             );

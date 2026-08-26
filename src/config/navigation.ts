@@ -1,5 +1,15 @@
 import type { Link } from "./types";
 
+export const cvNavigationLink = {
+  href: "/files/amarilio-de-oliveira-cv.pdf",
+  label: "Download CV",
+  icon: "line-md:document-list",
+  kbd: "d",
+  ctaVariant: "primary",
+  openInNewTab: true,
+  ariaLabel: "Open CV PDF in a new tab",
+} as const satisfies Link;
+
 export const navigationLinks: readonly Link[] = [
   {
     href: "/",
@@ -28,4 +38,5 @@ export const navigationLinks: readonly Link[] = [
       },
     ],
   },
+  cvNavigationLink,
 ] as const;

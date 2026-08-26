@@ -11,14 +11,14 @@ type NavigatorModalMenuProps = {
   query: string;
 };
 
+// Links with sublinks (e.g. "Portfolio") aren't real pages themselves — list
+// their sublinks instead so every entry here resolves to a real route.
+const navigableLinks = navigationLinks.flatMap(
+  (link) => link.sublinks ?? [link],
+);
+
 export default function NavigatorModalMenu({ query }: NavigatorModalMenuProps) {
   const normalizedQuery = query.toLowerCase();
-
-  // Links with sublinks (e.g. "Portfolio") aren't real pages themselves —
-  // list their sublinks instead so every entry here resolves to a real route.
-  const navigableLinks = navigationLinks.flatMap(
-    (link) => link.sublinks ?? [link],
-  );
 
   const filteredNavigationLinks = navigableLinks.filter((link) =>
     link.label.toLowerCase().includes(normalizedQuery),
@@ -60,6 +60,9 @@ export default function NavigatorModalMenu({ query }: NavigatorModalMenuProps) {
                     icon={link.icon}
                     kbd={link.kbd ?? ""}
                     modalId="navigation_modal"
+                    download={link.download}
+                    openInNewTab={link.openInNewTab}
+                    ariaLabel={link.ariaLabel}
                   />
                 </li>
               ))}

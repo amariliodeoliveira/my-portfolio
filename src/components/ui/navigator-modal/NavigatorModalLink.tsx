@@ -12,6 +12,9 @@ interface NavigatorModalLinkProps {
   kbd: string;
   modalId: string;
   external?: boolean;
+  download?: boolean | string;
+  openInNewTab?: boolean;
+  ariaLabel?: string;
 }
 
 export default function NavigatorModalLink({
@@ -21,14 +24,20 @@ export default function NavigatorModalLink({
   kbd,
   modalId,
   external = false,
+  download,
+  openInNewTab = false,
+  ariaLabel,
 }: NavigatorModalLinkProps) {
   const { closeModal } = useModal(modalId);
+  const shouldOpenInNewTab = external || openInNewTab;
 
   return (
     <Link
       href={href}
-      target={external ? "_blank" : undefined}
-      rel={external ? "noopener noreferrer" : undefined}
+      aria-label={ariaLabel}
+      target={shouldOpenInNewTab ? "_blank" : undefined}
+      rel={shouldOpenInNewTab ? "noopener noreferrer" : undefined}
+      download={download}
       className={MENU_ITEM_CLASSNAME}
       onClick={() => closeModal()}
     >
