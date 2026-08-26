@@ -1,4 +1,5 @@
 import Footer from "@/components/layout/Footer";
+import PixiFireworksDemo from "@/components/pixi-fireworks/PixiFireworksDemo";
 import PixiFireworksUnavailable from "@/components/pixi-fireworks/PixiFireworksUnavailable";
 import NavigatorModal from "@/components/ui/navigator-modal/NavigatorModal";
 import { PIXI_FIREWORKS_URL } from "@/config/pixiFireworks";
@@ -16,15 +17,7 @@ export default async function Home() {
   return (
     <>
       <main>
-        {isAvailable ? (
-          <iframe
-            src={PIXI_FIREWORKS_URL}
-            className="h-screen w-full border-none"
-            title="Fireworks"
-          />
-        ) : (
-          <PixiFireworksUnavailable />
-        )}
+        {isAvailable ? <PixiFireworksDemo /> : <PixiFireworksUnavailable />}
         <NavigatorModal />
       </main>
       <Footer variant="inline" />
