@@ -1,0 +1,65 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "timezone": "America/Sao_Paulo",
+  "labels": ["dependencies"],
+  "dependencyDashboard": true,
+  "minimumReleaseAge": "7 days",
+  "packageRules": [
+    {
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["patch", "minor"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    },
+    {
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    },
+    {
+      "matchPackageNames": [
+        "eslint",
+        "@eslint/js",
+        "typescript",
+        "typescript-eslint"
+      ],
+      "matchUpdateTypes": ["major"],
+      "enabled": false,
+      "description": "These tools are intentionally held until the Next.js, typescript-eslint, and ESLint ecosystem supports the next major cleanly."
+    },
+    {
+      "matchPackageNames": ["eslint-plugin-unicorn"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false,
+      "description": "eslint-plugin-unicorn is pinned to the v61 line because later majors require ESLint >=10.4 while this project is intentionally on ESLint 9."
+    },
+    {
+      "matchPackageNames": [
+        "next",
+        "react",
+        "react-dom",
+        "tailwindcss",
+        "daisyui",
+        "eslint-config-next",
+        "@types/node",
+        "@types/react",
+        "@types/react-dom"
+      ],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "description": "Framework, runtime, styling, and type major updates need manual review because they can affect rendering, generated types, or CI behavior."
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "automerge": true,
+    "minimumReleaseAge": "0 days"
+  }
+}

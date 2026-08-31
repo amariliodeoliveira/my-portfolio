@@ -17,8 +17,8 @@ export function formatDate(dateString: string | null): string {
   if (dateString === null) return "Moment";
 
   const date = new Date(dateString);
-  if (isNaN(date.getTime())) {
-    throw new Error(`Invalid date string: ${dateString}`);
+  if (Number.isNaN(date.getTime())) {
+    throw new TypeError(`Invalid date string: ${dateString}`);
   }
 
   return `${months[date.getMonth()]} ${date.getFullYear()}`;

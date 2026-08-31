@@ -5,7 +5,7 @@ export function isCurrentJob(job: Job): boolean {
 }
 
 export function getCurrentJob(jobs: readonly Job[]): Job | undefined {
-  return jobs.find(isCurrentJob);
+  return jobs.find((job) => isCurrentJob(job));
 }
 
 export function getJobEndTimestamp(job: Job): number {

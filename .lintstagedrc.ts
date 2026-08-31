@@ -1,13 +1,20 @@
-import path from "path";
+import path from "node:path";
 
 const buildEslintCommand = (filenames: string[]) =>
-  `eslint --max-warnings=5 ${filenames
+  `eslint ${filenames
     .map((f) => `"${path.relative(process.cwd(), f)}"`)
     .join(" ")}`;
 
+const buildTypeCheckCommand = () => "tsc --noEmit";
+
 const config = {
-  "**/*.{js,jsx,ts,tsx}": ["prettier --write", buildEslintCommand],
-  "**/*.{json,md,yml,yaml}": ["prettier --write"],
+  "**/*.{js,jsx,ts,tsx}": [
+    "prettier --write",
+    "eslint --fix --fix-type layout",
+    buildEslintCommand,
+  ],
+  "**/*.{ts,tsx}": [buildTypeCheckCommand],
+  "**/*.{json,css,md,yml,yaml}": ["prettier --write"],
 };
 
 export default config;

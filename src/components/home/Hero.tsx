@@ -2,7 +2,7 @@ import { InlineIcon } from "@iconify/react";
 import Link from "next/link";
 
 import KbdMenuButton from "@/components/ui/KbdMenuButton";
-import { MyProfile, MyJobs } from "@/data";
+import { MyJobs, MyProfile } from "@/data";
 import { getCurrentJob } from "@/utils/jobs";
 
 export default function Hero() {

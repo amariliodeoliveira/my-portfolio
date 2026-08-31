@@ -2,12 +2,11 @@ import "./globals.css";
 
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 
 import Header from "@/components/layout/Header";
 import { baseMetadata } from "@/lib/metadata";
-
-import type { Metadata } from "next";
 
 export const metadata: Metadata = baseMetadata;
 

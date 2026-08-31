@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, type Page, test } from "@playwright/test";
 
 const NAVIGATOR_MODAL = "#navigation_modal";
 const SEARCH_INPUT = "#navigation_search";
@@ -81,8 +81,8 @@ test.describe("navigator modal", () => {
 
   test("the CV shortcut opens the PDF in a new tab", async ({ page }) => {
     await page.addInitScript(() => {
-      window.open = (url, target, features) => {
-        window.sessionStorage.setItem(
+      globalThis.open = (url, target, features) => {
+        globalThis.sessionStorage.setItem(
           "lastWindowOpen",
           JSON.stringify({ url, target, features }),
         );
@@ -97,7 +97,7 @@ test.describe("navigator modal", () => {
 
     await page.keyboard.press("d");
     const windowOpenCall = await page.evaluate(() =>
-      JSON.parse(window.sessionStorage.getItem("lastWindowOpen") ?? "{}"),
+      JSON.parse(globalThis.sessionStorage.getItem("lastWindowOpen") ?? "{}"),
     );
 
     expect(windowOpenCall).toMatchObject({
