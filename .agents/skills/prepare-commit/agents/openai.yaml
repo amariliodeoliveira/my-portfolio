@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prepare Commit"
+  short_description: "Prepare focused, verified commits"
+  default_prompt: "Use $prepare-commit to prepare and deliver focused commits for this repository."
