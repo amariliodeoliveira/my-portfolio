@@ -10,7 +10,7 @@ export const MyProfile: MyProfileType = {
   birthDate: "1994-07",
   roles: ["Frontend Engineer", "Fullstack Engineer", "Software Engineer"],
   headline:
-    "Frontend Specialist and Software Engineer with 3+ years of experience building scalable web applications.",
+    "Frontend Specialist and Software Engineer with 4+ years of experience building scalable web applications.",
   contact: {
     email: "amarilioalencar@gmail.com",
     phone: "+55 85 99285-2448",
@@ -34,7 +34,7 @@ export const MyProfile: MyProfileType = {
       "Greetings! 👋 I'm a Software Engineer with a frontend heart and fullstack hands, using AI as part of my development process to build product interfaces, APIs, and reliable web experiences with a suspicious amount of coffee ☕.",
     fullBio: `I've been curious about technology for as long as I can remember. In my early teens, I wrote my first Hello World, and what started as curiosity about how things worked behind the scenes eventually became my career.
 
-Today, I'm a Software Engineer with 3+ years of professional experience and a strong frontend focus. I work primarily with React, Next.js, and TypeScript, while also contributing across the stack with Ruby on Rails, Node.js, and NestJS. My experience ranges from user-facing interfaces and complex product flows to REST APIs, integrations, automated testing, and the engineering practices that support reliable software delivery.
+Today, I'm a Software Engineer with 4+ years of professional experience and a strong frontend focus. I work primarily with React, Next.js, and TypeScript, while also contributing across the stack with Ruby on Rails, Node.js, and NestJS. My experience ranges from user-facing interfaces and complex product flows to REST APIs, integrations, automated testing, and the engineering practices that support reliable software delivery.
 
 I'm also interested in how software development is evolving with AI. I use AI-assisted workflows and Spec-Driven Development to support implementation, code review, documentation, and software quality, treating AI as part of the engineering process rather than a replacement for engineering judgment.
 

@@ -8,6 +8,7 @@ const maxWidthClassNames = {
 type RoutePageProps = {
   children: ReactNode;
   labelledBy?: string;
+  ariaHidden?: boolean;
   width?: keyof typeof maxWidthClassNames;
   className?: string;
   contentClassName?: string;
@@ -24,6 +25,7 @@ function getMaxWidthClassName(width: keyof typeof maxWidthClassNames) {
 export default function RoutePage({
   children,
   labelledBy,
+  ariaHidden,
   width = "lg",
   className = "",
   contentClassName = "",
@@ -31,6 +33,7 @@ export default function RoutePage({
   return (
     <section
       aria-labelledby={labelledBy}
+      aria-hidden={ariaHidden}
       className={`bg-base-200 min-h-screen pt-32 ${className}`.trim()}
     >
       <div
