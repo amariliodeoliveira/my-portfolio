@@ -71,10 +71,10 @@ void test("generates complete and internally consistent discovery artifacts", as
       aiIndexSource,
       /amarilio\.tech|Press ctrl\+k|^close$/im,
     );
-    assert.match(sitemap, new RegExp(`${siteUrl}/about-me`));
-    assert.match(sitemap, new RegExp(`${siteUrl}/pixi-fireworks`));
-    assert.match(robots, new RegExp(`Sitemap: ${siteUrl}/sitemap\\.xml`));
-    assert.match(llms, new RegExp(`${siteUrl}/ai-index\\.json`));
+    assert.ok(sitemap.includes(`${siteUrl}/about-me`));
+    assert.ok(sitemap.includes(`${siteUrl}/pixi-fireworks`));
+    assert.ok(robots.includes(`Sitemap: ${siteUrl}/sitemap.xml`));
+    assert.ok(llms.includes(`${siteUrl}/ai-index.json`));
     assert.deepEqual(
       new Set(Object.keys(schema.pages)),
       new Set(["/", "/about-me", "/pixi-fireworks"]),
