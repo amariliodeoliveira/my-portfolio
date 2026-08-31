@@ -3,11 +3,11 @@ import Footer from "@/components/layout/Footer";
 import NavigatorModal from "@/components/ui/navigator-modal/NavigatorModal";
 import { MyProfile } from "@/data";
 import {
-  getPersonSchema,
-  getWebsiteSchema,
-  getOrganizationSchema,
-  getWebPageSchema,
   getFAQSchema,
+  getOrganizationSchema,
+  getPersonSchema,
+  getWebPageSchema,
+  getWebsiteSchema,
 } from "@/lib/schemas";
 
 export default function Home() {

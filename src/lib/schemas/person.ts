@@ -1,6 +1,6 @@
 import { Person, WithContext } from "schema-dts";
 
-import { MyProfile, MyJobs } from "@/data";
+import { MyJobs, MyProfile } from "@/data";
 import { getCurrentJob } from "@/utils/jobs";
 
 import { getSameAs, SCHEMA_CONTEXT } from "./shared";

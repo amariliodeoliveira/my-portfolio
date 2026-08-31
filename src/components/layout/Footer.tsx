@@ -12,16 +12,17 @@ type FooterProps = {
   variant: "overlay" | "inline";
 };
 
-const footerClassNames: Record<FooterProps["variant"], string> = {
-  overlay:
-    "text-base-content/70 fixed bottom-0 left-0 w-full bg-transparent px-4 py-3 backdrop-blur",
-  inline:
-    "border-base-content/10 text-base-content/70 border-t bg-base-200 px-4 py-6",
-};
+function getFooterClassName(variant: FooterProps["variant"]) {
+  if (variant === "overlay") {
+    return "text-base-content/70 fixed bottom-0 left-0 w-full bg-transparent px-4 py-3 backdrop-blur";
+  }
+
+  return "border-base-content/10 text-base-content/70 border-t bg-base-200 px-4 py-6";
+}
 
 export default function Footer({ variant }: FooterProps) {
   return (
-    <footer className={footerClassNames[variant]}>
+    <footer className={getFooterClassName(variant)}>
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center justify-between gap-3 text-xs sm:flex-row">
         <p className="order-2 text-center sm:order-1 sm:text-left">
           © {new Date().getFullYear()} {MyProfile.name}. Software Engineer.
