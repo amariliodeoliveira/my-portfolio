@@ -14,3 +14,7 @@ export function getAuthorPublisher() {
 export function getSameAs(): string[] {
   return Object.values(MyProfile.socials).filter(Boolean);
 }
+
+export function serializeJsonLd(schema: object): string {
+  return JSON.stringify(schema).replaceAll("<", String.raw`\u003c`);
+}

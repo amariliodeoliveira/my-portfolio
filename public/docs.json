@@ -1,26 +1,26 @@
 {
   "version": "1.0",
-  "generated": "2026-08-26T03:20:00.129Z",
+  "generated": "2026-08-31T06:14:19.490Z",
   "site": {
     "title": "Amarilio de Oliveira | Software Engineer",
     "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil.",
-    "url": "https://amarilio.tech"
+    "url": "https://my-portfolio-ebon-sigma-14.vercel.app"
   },
   "documents": [
     {
-      "url": "https://amarilio.tech",
-      "title": "Amarilio de Oliveira",
-      "description": "Frontend Specialist &amp; Software Engineer based in Fortaleza, Brazil."
-    },
-    {
-      "url": "https://amarilio.tech/about-me",
-      "title": "About-me",
+      "url": "https://my-portfolio-ebon-sigma-14.vercel.app",
+      "title": "Amarilio de Oliveira | Software Engineer",
       "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil."
     },
     {
-      "url": "https://amarilio.tech/pixi-fireworks",
-      "title": "Pixi-fireworks",
-      "description": "Frontend Specialist & Software Engineer based in Fortaleza, Brazil."
+      "url": "https://my-portfolio-ebon-sigma-14.vercel.app/about-me",
+      "title": "About Amarilio de Oliveira",
+      "description": "Learn about Amarilio de Oliveira, his software engineering career, technical skills, education, and AI-assisted development workflow."
+    },
+    {
+      "url": "https://my-portfolio-ebon-sigma-14.vercel.app/pixi-fireworks",
+      "title": "PixiJS Fireworks Presentation",
+      "description": "An XML-driven PixiJS fireworks presentation built with TypeScript, WebGL rendering, modular effects, and frame-rate independent animation."
     }
   ],
   "metadata": {

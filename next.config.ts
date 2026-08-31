@@ -1,6 +1,6 @@
 import { withAeo } from "aeo.js/next";
 
-import { MyProfile } from "./src/data";
+import { createAeoConfig } from "./src/config/aeo";
 
 export default withAeo({
   productionBrowserSourceMaps: false,
@@ -23,18 +23,5 @@ export default withAeo({
     },
   ],
 
-  aeo: {
-    title: MyProfile.seo.defaultTitle,
-    url: MyProfile.contact.url,
-    description: MyProfile.seo.defaultDescription,
-    generators: {
-      robotsTxt: true,
-      llmsTxt: true,
-      schema: true,
-    },
-    widget: {
-      enabled: true,
-      position: "bottom-right",
-    },
-  },
+  aeo: createAeoConfig(),
 });

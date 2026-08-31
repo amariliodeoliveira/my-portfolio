@@ -1,9 +1,14 @@
-import { postBuild } from "aeo.js/next";
+import { generateAEOFiles, resolveConfig } from "aeo.js";
 
-import { MyProfile } from "../src/data/profile.ts";
+import { createAeoConfig } from "../src/config/aeo.ts";
 
-await postBuild({
-  title: MyProfile.seo.defaultTitle,
-  description: MyProfile.seo.defaultDescription,
-  url: process.env.NEXT_PUBLIC_SITE_URL || MyProfile.contact.url,
-});
+const config = resolveConfig(createAeoConfig());
+const result = await generateAEOFiles(config);
+
+if (result.errors.length > 0) {
+  throw new Error(`AEO generation failed:\n${result.errors.join("\n")}`);
+}
+
+console.log(
+  `[aeo.js] Generated ${result.files.length} files from shared site data`,
+);
