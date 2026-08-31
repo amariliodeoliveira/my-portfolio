@@ -12,7 +12,7 @@ Frontend Specialist & Software Engineer based in Fortaleza, Brazil.
 
 # Amarilio de Oliveira
 
-Frontend Specialist and Software Engineer with 3+ years of experience building scalable web applications.
+Frontend Specialist and Software Engineer with 4+ years of experience building scalable web applications.
 
 ## Professional profile
 
