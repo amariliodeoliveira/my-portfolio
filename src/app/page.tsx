@@ -3,11 +3,10 @@ import Footer from "@/components/layout/Footer";
 import NavigatorModal from "@/components/ui/navigator-modal/NavigatorModal";
 import { MyProfile } from "@/data";
 import {
-  getFAQSchema,
-  getOrganizationSchema,
   getPersonSchema,
   getWebPageSchema,
   getWebsiteSchema,
+  serializeJsonLd,
 } from "@/lib/schemas";
 
 export default function Home() {
@@ -16,13 +15,11 @@ export default function Home() {
   const schemas = [
     getPersonSchema(),
     getWebsiteSchema(),
-    getOrganizationSchema(),
     getWebPageSchema(
       MyProfile.contact.url,
       MyProfile.seo.defaultTitle,
       MyProfile.seo.defaultDescription,
     ),
-    getFAQSchema(),
   ];
 
   return (
@@ -31,7 +28,7 @@ export default function Home() {
         <script
           key={index}
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
         />
       ))}
       <main>

@@ -1,5 +1,7 @@
 import type { MyProfileType } from "@/types";
 
+import { SITE_URL } from "../config/site.ts";
+
 export const MyProfile: MyProfileType = {
   name: "Amarilio de Oliveira",
   firstName: "Amarilio",
@@ -14,7 +16,7 @@ export const MyProfile: MyProfileType = {
   contact: {
     email: "amarilioalencar@gmail.com",
     phone: "+55 85 99285-2448",
-    url: "https://amarilio.tech",
+    url: SITE_URL,
     location: {
       city: "Fortaleza",
       state: "Ceará",

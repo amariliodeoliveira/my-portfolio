@@ -1,1 +1,2 @@
+npm run test:aeo
 npx lint-staged
