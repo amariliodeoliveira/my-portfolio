@@ -23,7 +23,8 @@
     "lint:fix": "eslint . --fix --fix-type layout",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "check": "npm run type-check && npm run format:check && npm run lint",
+    "check": "npm run type-check && npm run format:check && npm run lint && npm run test:aeo",
+    "test:aeo": "node --test tests/aeo-*.test.ts",
     "test:e2e": "playwright test",
     "prepare": "husky",
     "postbuild": "node scripts/postbuild.mjs"
