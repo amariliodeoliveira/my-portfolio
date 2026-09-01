@@ -1,0 +1,87 @@
+# This file is shared by Qlty CLI and Qlty Cloud.
+config_version = "0"
+
+exclude_patterns = [
+  "*_min.*",
+  "*-min.*",
+  "*.min.*",
+  "**/.yarn/**",
+  ".qlty/out/**",
+  "**/*.d.ts",
+  "**/assets/**",
+  "**/bower_components/**",
+  "**/build/**",
+  "**/cache/**",
+  "**/db/**",
+  "**/deps/**",
+  "**/dist/**",
+  "**/extern/**",
+  "**/external/**",
+  "**/generated/**",
+  "**/Godeps/**",
+  "**/gradlew/**",
+  "**/mvnw/**",
+  "**/node_modules/**",
+  "**/protos/**",
+  "**/seed/**",
+  "**/target/**",
+  "**/templates/**",
+  "**/testdata/**",
+  "**/vendor/**",
+  "public/about-me.md",
+  "public/ai-index.json",
+  "public/docs.json",
+  "public/index.md",
+  "public/llms-full.txt",
+  "public/llms.txt",
+  "public/pixi-fireworks.md",
+  "public/robots.txt",
+  "public/schema.json",
+  "public/sitemap.xml",
+]
+
+test_patterns = [
+  "**/test/**",
+  "**/spec/**",
+  "**/*.test.*",
+  "**/*.spec.*",
+  "**/*_test.*",
+  "**/*_spec.*",
+  "**/test_*.*",
+  "**/spec_*.*",
+]
+
+[smells]
+mode = "comment"
+
+[[source]]
+name = "default"
+default = true
+
+[[plugin]]
+name = "actionlint"
+
+[[plugin]]
+name = "eslint"
+version = "9.39.5"
+package_file = "package.json"
+package_filters = ["eslint", "jest", "next", "prettier"]
+
+[[plugin]]
+name = "osv-scanner"
+
+[[plugin]]
+name = "prettier"
+version = "3.9.6"
+package_file = "package.json"
+package_filters = ["prettier"]
+
+[[plugin]]
+name = "ripgrep"
+mode = "comment"
+
+[[plugin]]
+name = "trufflehog"
+
+[[plugin]]
+name = "zizmor"
