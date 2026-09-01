@@ -61,10 +61,11 @@ default = true
 [[plugin]]
 name = "actionlint"
 
+# ESLint runs in CI after npm ci; Qlty's isolated runner cannot resolve
+# Tailwind CSS from the project workspace.
 [[plugin]]
 name = "eslint"
-version = "9.39.5"
-package_file = "package.json"
+mode = "disabled"
 
 [[plugin]]
 name = "osv-scanner"
