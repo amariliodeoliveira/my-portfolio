@@ -1,10 +1,9 @@
-import assert from "node:assert/strict";
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import test from "node:test";
 
 import { generateAEOFiles, resolveConfig } from "aeo.js";
+import { expect, it } from "vitest";
 
 import { createAeoConfig } from "../src/config/aeo.ts";
 import { MyProfile } from "../src/data/profile.ts";
@@ -22,7 +21,7 @@ const expectedFiles = [
   "sitemap.xml",
 ] as const;
 
-void test("generates complete and internally consistent discovery artifacts", async () => {
+it("generates complete and internally consistent discovery artifacts", async () => {
   const outputDirectory = await mkdtemp(path.join(tmpdir(), "portfolio-aeo-"));
   const siteUrl = "https://portfolio.example.com";
 
@@ -33,11 +32,10 @@ void test("generates complete and internally consistent discovery artifacts", as
     });
     const result = await generateAEOFiles(config);
 
-    assert.deepEqual(result.errors, []);
-    assert.deepEqual(
+    expect(result.errors).toEqual([]);
+    expect(
       new Set(result.files.map((filename) => path.basename(filename))),
-      new Set(expectedFiles),
-    );
+    ).toEqual(new Set(expectedFiles));
 
     const readArtifact = (filename: string) => {
       // Filenames come from the fixed expectedFiles list and stay inside the
@@ -61,22 +59,18 @@ void test("generates complete and internally consistent discovery artifacts", as
       pages: Record<string, unknown>;
     };
 
-    assert.equal(aiIndex.entries.length, 3);
-    assert.ok(
+    expect(aiIndex.entries).toHaveLength(3);
+    expect(
       aiIndex.entries
         .find((entry) => entry.url.endsWith("/about-me"))
         ?.content.includes(MyProfile.about.fullBio),
-    );
-    assert.doesNotMatch(
-      aiIndexSource,
-      /amarilio\.tech|Press ctrl\+k|^close$/im,
-    );
-    assert.ok(sitemap.includes(`${siteUrl}/about-me`));
-    assert.ok(sitemap.includes(`${siteUrl}/pixi-fireworks`));
-    assert.ok(robots.includes(`Sitemap: ${siteUrl}/sitemap.xml`));
-    assert.ok(llms.includes(`${siteUrl}/ai-index.json`));
-    assert.deepEqual(
-      new Set(Object.keys(schema.pages)),
+    ).toBe(true);
+    expect(aiIndexSource).not.toMatch(/amarilio\.tech|Press ctrl\+k|^close$/im);
+    expect(sitemap).toContain(`${siteUrl}/about-me`);
+    expect(sitemap).toContain(`${siteUrl}/pixi-fireworks`);
+    expect(robots).toContain(`Sitemap: ${siteUrl}/sitemap.xml`);
+    expect(llms).toContain(`${siteUrl}/ai-index.json`);
+    expect(new Set(Object.keys(schema.pages))).toEqual(
       new Set(["/", "/about-me", "/pixi-fireworks"]),
     );
   } finally {

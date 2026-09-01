@@ -1,10 +1,10 @@
 # Testing guidelines
 
-## Current test layers
+## Test layers
 
-- Use Node's test runner for the existing pure AEO configuration and artifact-generation suite under `tests/`.
-- Use Playwright for routes, browser behavior, accessibility-facing semantics, responsive behavior, and generated public endpoints.
-- Vitest and Testing Library are planned as a separate migration. Once adopted, use them for React components, hooks, and shared logic, and avoid retaining two general-purpose unit-test runners without a clear boundary.
+- Use Vitest for unit and integration tests, including the AEO configuration and artifact-generation suite under `tests/`.
+- Use React Testing Library with `user-event` for components and hooks. Test behavior, semantics, accessible names, keyboard interaction, and meaningful conditional states.
+- Use Playwright for complete routes, real-browser behavior, responsive layout, and generated public endpoints.
 
 ## Expectations
 
@@ -17,7 +17,8 @@
 ## Proportional verification
 
 - AEO or shared-content changes: `npm run test:aeo` and regenerate artifacts.
+- Components, hooks, or shared logic: `npm test`; use `npm run test:watch` while iterating when useful.
 - TypeScript/application changes: `npm run type-check` and `npm run lint`.
 - Route, rendering, interaction, or responsive changes: `npm run test:e2e`.
-- Broad, dependency, configuration, or release-like changes: `npm run check`, `npm run test:e2e`, and `npm run build` when build is not already exercised by E2E.
+- Broad, dependency, configuration, or release-like changes: `npm run check`, `npm run test:coverage`, `npm run test:e2e`, and `npm run build` when build is not already exercised by E2E.
 - Report local platform-only failures accurately; do not hide them or rewrite unrelated files to silence them.
