@@ -21,6 +21,9 @@ jobs:
   check:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -60,6 +63,18 @@ jobs:
 
       - name: Lint (ESLint CLI)
         run: npm run lint
+
+      - name: Run unit tests with coverage
+        run: npm run test:coverage
+
+      - name: Upload unit coverage to Qlty
+        uses: qltysh/qlty-action/coverage@08a0a862c159eae9b9003081da6663d96efef637 # v2.3.0
+        with:
+          oidc: true
+          files: coverage/lcov.info
+          format: lcov
+          tag: unit
+          skip-errors: false
 
       - name: Build (Next.js)
         run: npm run build
