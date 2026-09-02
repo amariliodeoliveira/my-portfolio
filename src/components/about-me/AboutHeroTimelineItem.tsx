@@ -1,10 +1,10 @@
 import { Icon } from "@iconify/react";
 
+import SkeletonText from "@/components/ui/SkeletonText";
 import type { Job } from "@/types";
 import { formatDate } from "@/utils/dateFormat";
 
 import AboutHeroTimelineLink from "./AboutHeroTimelineLink";
-import SkeletonText from "./SkeletonText";
 
 type AboutHeroTimelineItemProps = {
   index: number;

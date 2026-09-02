@@ -21,7 +21,10 @@ export default defineConfig({
     // assertions aren't racing Turbopack's on-demand dev compile.
     command: "npm run build && npm run start",
     url: "http://localhost:3000",
-    reuseExistingServer: !process.env.CI,
+    // Reusing a stale local server can make tests exercise an older build.
+    // Opt in explicitly when that is intentional.
+    reuseExistingServer: process.env.PLAYWRIGHT_REUSE_SERVER === "true",
+    gracefulShutdown: { signal: "SIGINT", timeout: 1000 },
     timeout: 120_000,
   },
 });
