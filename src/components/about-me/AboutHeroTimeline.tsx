@@ -1,11 +1,11 @@
 import Link from "next/link";
 
+import SkeletonText from "@/components/ui/SkeletonText";
 import { cvNavigationLink } from "@/config/navigation";
 import { MyJobs } from "@/data/jobs";
 import { getJobEndTimestamp } from "@/utils/jobs";
 
 import AboutHeroTimelineItem from "./AboutHeroTimelineItem";
-import SkeletonText from "./SkeletonText";
 
 const sortedJobs = MyJobs.toSorted(
   (a, b) => getJobEndTimestamp(b) - getJobEndTimestamp(a),

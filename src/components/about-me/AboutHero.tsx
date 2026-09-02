@@ -1,11 +1,11 @@
 import ProfilePic from "@img/profile-oficial.jpeg";
 
 import RoutePage from "@/components/layout/RoutePage";
+import SkeletonText from "@/components/ui/SkeletonText";
 import { MyProfile } from "@/data";
 
 import AboutHeroTimeline from "./AboutHeroTimeline";
 import ProfileImage from "./ProfileImage";
-import SkeletonText from "./SkeletonText";
 
 type AboutHeroProps = {
   loading?: boolean;
